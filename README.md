@@ -29,10 +29,10 @@ Each test's pattern, mock shape and default eligibility come from its family. Sy
 
 ### Honest coverage
 
-- The catalogue lists **226 exams** (see `src/data/catalog.ts`). The target was 300+; that target is not met. More entries are added only once their official pattern is verified.
-- **Verified** patterns are marked `verified: true` on their family. Others are labelled as approximate. Several sources disagreed on section splits for some exams (for example TNPSC Group IV, JEE Advanced, BITSAT and IBPS PO), and those are marked accordingly.
-- Full practice content (MCQs, timed mock, syllabus) is intended for about 30 major exams. Other exams have pattern and syllabus only.
-- Some state PSC mock papers hold about half of the official question count, because the practice bank is still being built. The app states this on the paper.
+- The catalogue lists **230 exams** (see `src/data/catalog.ts`), below the earlier target of 300+. Of these, **31 exam entries** have patterns marked verified against an official notice; the remaining 199 are labelled approximate.
+- **Verified** patterns are marked `verified: true` on their family. Approximate patterns should be checked against the current official notice. New entries may be included with an approximate label while their patterns await verification.
+- Practice coverage varies by exam and section. Some subject-specific banks are small or unavailable; mock papers can be shorter than the listed pattern, and unavailable sections are not filled with unrelated general-awareness questions.
+- Practice MCQs do not reproduce written, speaking, listening or other non-MCQ tasks. Check `npx tsx scripts/verify-banks.mts` for current section shortfalls; the script exits nonzero while issues remain.
 - Official apply links point only to the conducting body's site. Past-paper links are not constructed where they could not be verified.
 
 ## Scripts

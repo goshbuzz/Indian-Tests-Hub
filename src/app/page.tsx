@@ -176,7 +176,7 @@ export default function HomePage() {
           </nav>
           <Link
             href="/start"
-            className="rounded-full bg-[#01411C] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#046a32]"
+            className="rounded-full bg-[#FF9933] px-4 py-2 text-sm font-semibold text-[#01411C] shadow-sm transition hover:bg-[#ffb866]"
           >
             Open the hub
           </Link>
@@ -185,7 +185,7 @@ export default function HomePage() {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#01411C] via-[#046a32] to-[#0a7a3e] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#803800] via-[#70400e] to-[#075b2c] text-white">
           <div
             className="pointer-events-none absolute inset-0 opacity-20"
             style={{

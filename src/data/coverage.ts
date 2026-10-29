@@ -137,7 +137,12 @@ export function mockLevel(n: number): "easy" | "medium" | "hard" {
 function takeSubject(pool: MCQ[], subject: string | undefined, n: number): MCQ[] {
   const keys = subject ? bankSubjectFor(subject) : null;
   const rows = keys ? pool.filter((m) => keys.includes(m.subject)) : pool;
-  return shuffle(rows).slice(0, n);
+  const seen = new Set<string>();
+  return shuffle(rows).filter((m) => {
+    if (seen.has(m.question_text)) return false;
+    seen.add(m.question_text);
+    return true;
+  }).slice(0, n);
 }
 
 /** Timed paper built from the test's own section pattern and the practice bank. */
@@ -148,13 +153,14 @@ export function questionsForPaper(testId: string, year?: number, mockN = 1, salt
   const lvl = mockLevel(n);
   const out: MCQ[] = [];
   const used = new Set<string>();
-  shape.slots.forEach((slot: Slot) => {
+  shape.slots.forEach((slot: Slot, sectionIndex: number) => {
     const leftover = pool.filter((m) => !used.has(m.question_text));
     const got = takeSubject(leftover, slot.subject, slot.n);
     got.forEach((q) => {
       used.add(q.question_text);
       out.push({
         ...q,
+        paper_section: sectionIndex,
         id: `${q.id}-m${n}-${salt || "x"}-${out.length}`,
         difficulty: lvl,
         topic: `${q.topic} · L${n} ${lvl} · ${year ?? 2026}`,

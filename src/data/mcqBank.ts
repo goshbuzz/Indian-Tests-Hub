@@ -118,6 +118,62 @@ Banking Awareness|Payments|Which system settles transfers in batches on a net ba
 Banking Awareness|Codes|An IFSC code has how many characters?|11|9|10|12|0|Four letters, a zero, then six characters.
 Banking Awareness|Regulation|Basel III mainly relates to?|Capital adequacy|Currency design|Labour laws|Foreign trade|0|Basel III sets capital and liquidity standards.
 Banking Awareness|History|Lead Bank Scheme was introduced in?|1969|1980|1991|1947|0|Introduced in 1969 for district-wise lead banks.
+Data Interpretation|Tables|A library lent 40 science, 30 history and 20 literature books. How many books were lent in total?|90|70|80|100|0|Add the three counts: 40 + 30 + 20 = 90.
+Data Interpretation|Tables|A library lent 40 science, 30 history and 20 literature books. How many more science than literature books were lent?|20|10|30|40|0|Subtract literature from science: 40 − 20 = 20.
+Data Interpretation|Tables|A library lent 40 science, 30 history and 20 literature books. What fraction were history books?|One-third|One-half|One-quarter|Two-thirds|0|History accounts for 30 out of 90 books, or one-third.
+Data Interpretation|Percentages|A shop sold 50 notebooks in May and 60 in June. What was the percentage increase?|20%|10%|25%|50%|0|The increase is 10 on a base of 50, or 20%.
+Data Interpretation|Ratios|A bus carried 24 adults and 16 children. What was the ratio of adults to children?|3:2|2:3|3:4|4:3|0|24:16 simplifies to 3:2.
+Data Interpretation|Averages|A team scored 12, 18 and 15 points in three rounds. What was its average score?|15|12|18|45|0|The average is (12 + 18 + 15) ÷ 3 = 15.
+Data Interpretation|Tables|A school planted 25 trees in July, 35 in August and 40 in September. How many were planted in August and September together?|75|60|65|100|0|35 + 40 = 75 trees.
+Data Interpretation|Percentages|A survey has 200 respondents; 80 choose option A. What percentage chose A?|40%|20%|60%|80%|0|80 ÷ 200 × 100 = 40%.
+English|Reading comprehension|Passage: The town library extended its evening hours after a survey showed that many workers could not visit during the day. Why were the hours extended?|To help workers visit after daytime hours|To reduce the number of books|To close the library on weekends|To replace the survey|0|The passage says many workers could not visit during the day.
+English|Reading comprehension|Passage: Meera saved rainwater for her garden. During the dry month she used the stored water instead of the tap. What did Meera use in the dry month?|Stored rainwater|Only tap water|River water delivered daily|Water from a swimming pool|0|The passage states that she used stored rainwater instead of tap water.
+English|Reading comprehension|Passage: A museum offers free entry on Mondays. On other days visitors must buy a ticket. When is entry free?|Monday|Tuesday|Saturday|Every day|0|The passage explicitly identifies Mondays as free-entry days.
+English|Reading comprehension|Passage: The train was delayed by fog, so the meeting began later than planned. What caused the delay to the train?|Fog|A ticket sale|The meeting agenda|A clear sky|0|The passage directly attributes the train delay to fog.
+Accounting|Principles|In double-entry bookkeeping every transaction has at least?|One debit and one credit|Two debits only|Two credits only|No effect on accounts|0|Every transaction has equal total debits and credits.
+Accounting|Principles|Which equation expresses the basic accounting relationship?|Assets = liabilities + equity|Assets = income + expenses|Equity = assets + liabilities|Liabilities = assets + equity|0|Assets are financed by liabilities and equity.
+Accounting|Journal|A business buys equipment for cash. Which account is debited?|Equipment|Cash|Capital|Sales|0|The asset equipment increases and cash decreases.
+Accounting|Journal|A business receives cash from a debtor. What happens to the debtor balance?|It decreases|It increases|It becomes revenue again|It becomes an expense|0|Cash is received against an existing receivable.
+Accounting|Trial balance|A trial balance primarily compares the totals of?|Ledger debit and credit balances|Assets and expenses only|Cash receipts and cash payments only|Sales and purchases only|0|A trial balance checks whether total debit and credit balances agree.
+Accounting|Depreciation|The straight-line method allocates depreciable cost how?|Equally over the estimated useful life|Only in the year of purchase|According to sales revenue alone|Only on disposal|0|Straight-line depreciation allocates depreciable cost evenly over useful life.
+Accounting|Inventory|Under FIFO which inventory costs are assumed to be issued first?|The earliest costs|The latest costs|The highest costs|The average costs only|0|FIFO means first in, first out.
+Accounting|Accruals|An expense incurred but not yet paid is generally recorded as?|An accrued liability|Prepaid income|A capital receipt|Inventory|0|The expense belongs to the period and a liability remains payable.
+Accounting|Prepayments|Insurance paid in advance for a future period is initially a?|Prepaid asset|Sales revenue|Long-term loan|Bad debt|0|The unused portion is a prepaid expense, an asset.
+Accounting|Receivables|A credit sale initially increases which asset?|Trade receivables|Cash|Equipment|Prepaid insurance|0|The customer owes the business for the credit sale.
+Accounting|Bank reconciliation|A cheque issued but not yet presented generally appears in?|The cash book but not yet the bank statement|The bank statement but not the cash book|Neither record|The sales journal only|0|The business has recorded the cheque, while the bank has not yet processed it.
+Accounting|Financial statements|Which statement reports assets and liabilities at a date?|Balance sheet|Statement of profit and loss|Sales register|Cash receipt voucher|0|A balance sheet presents assets, liabilities and equity at a specified date.
+Cost Accounting|Classification|Which is normally a variable cost per unit of output?|Direct material consumed per unit|Factory rent fixed for the period|Annual insurance premium|Fixed factory supervisor salary|0|Total direct material cost normally varies with output when consumption per unit is constant.
+Cost Accounting|Classification|Which cost is normally fixed within a relevant range?|Factory rent for the period|Material per unit produced|Sales commission per unit|Packing per unit|0|Fixed rent does not vary with output within the relevant range.
+Cost Accounting|Contribution|Selling price per unit is ₹100 and variable cost is ₹60. What is contribution per unit?|₹40|₹60|₹100|₹160|0|Contribution equals selling price less variable cost: ₹100 − ₹60 = ₹40.
+Cost Accounting|Break-even|Fixed costs are ₹2,000 and contribution per unit is ₹40. What is break-even volume?|50 units|40 units|80 units|2,000 units|0|Break-even units equal fixed costs divided by contribution per unit.
+Cost Accounting|Cost sheet|Prime cost comprises?|Direct material, direct labour and direct expenses|Only factory overhead|Only selling expenses|Fixed and variable profit|0|Prime cost is the sum of direct material, labour and expenses.
+Cost Accounting|Overheads|Which is an indirect production cost?|Factory lighting|Wood in a wooden table|Wages of a worker making a specific unit|A component directly traced to a product|0|Factory lighting supports production but is not directly traceable to one unit.
+Cost Accounting|Absorption|An overhead absorption rate is used to?|Allocate production overhead to cost units|Calculate the bank balance|Record a share issue|Eliminate direct material|0|An absorption rate assigns overhead to units using an appropriate basis.
+Cost Accounting|Marginal costing|If contribution exceeds fixed costs, the difference is?|Profit|Variable cost|Sales volume|Direct material|0|Contribution less fixed costs gives profit, when contribution exceeds fixed costs.
+Taxation|GST|GST is generally described as what kind of tax?|An indirect tax|A tax only on property ownership|A tax on court judgments|A tax on share capital only|0|GST is an indirect tax on supplies, subject to the applicable law.
+Taxation|GST|What does input tax credit generally offset?|Eligible tax payable on outward supplies|Employee income tax in every case|The purchase price of all assets|Customs duty in every case|0|Eligible input tax credit can be used against output GST liability subject to legal conditions.
+Taxation|GST|GST on an inter-State supply is generally charged as?|IGST|Only CGST|Only SGST|Stamp duty|0|Integrated GST generally applies to inter-State supplies, subject to the law.
+Taxation|Income tax|The financial year in India normally runs from?|1 April to 31 March|1 January to 31 December|1 July to 30 June|1 October to 30 September|0|The financial year starts on 1 April and ends on 31 March.
+Taxation|Income tax|In income-tax terminology the assessment year generally follows which period?|The previous year in which income is earned|The next assessment year|The company's first month only|The date of incorporation only|0|Income of a previous year is generally assessed in the following assessment year.
+Taxation|GST|A GST tax invoice primarily documents?|Details of a taxable supply|A court appeal|An audit appointment|A bank loan sanction|0|A tax invoice records prescribed details of a taxable supply.
+Taxation|Tax concepts|Who generally bears the economic burden of an indirect tax on a purchase?|The consumer, when the tax is passed on|Only the tax authority|Only the auditor|The company registrar|0|Indirect taxes can be passed on to consumers through prices.
+Taxation|Tax concepts|Tax deducted at source is commonly abbreviated as?|TDS|FIFO|NAV|GDP|0|TDS means tax deducted at source.
+Auditing|Evidence|The primary purpose of an audit of financial statements is to?|Express an independent opinion on the statements|Guarantee that every fraud has been found|Prepare every transaction for management|Set tax rates|0|The auditor seeks sufficient appropriate evidence to express an opinion.
+Auditing|Evidence|Which evidence is generally more reliable, all else equal?|A direct external confirmation received by the auditor|An unsupported oral assertion by management|An unsigned internal note|A draft prepared without source documents|0|Evidence obtained directly from an independent external source is generally more reliable.
+Auditing|Independence|Auditor independence supports?|An objective audit opinion|Management's control of the audit opinion|Guaranteed profitability|Automatic approval of every transaction|0|Independence supports objectivity in the auditor's work and opinion.
+Auditing|Materiality|An omission is material if it could reasonably influence?|Users' decisions based on the financial statements|The colour of the annual report|The company's office address alone|The number of audit working papers alone|0|Materiality concerns the possible influence of misstatements on users' decisions.
+Auditing|Assertions|Checking whether recorded inventory physically exists addresses which assertion?|Existence|Completeness only|Classification only|Presentation only|0|Physical inspection can provide evidence that recorded inventory exists.
+Auditing|Assertions|Tracing goods received before year-end to the records can help test?|Completeness|Existence only|Valuation only|Ownership of all assets|0|Tracing source documents to records helps identify omissions.
+Auditing|Evidence|Audit working papers are used to?|Document audit procedures, evidence and conclusions|Replace the financial statements|Fix statutory tax rates|Record only management salaries|0|Audit documentation records work performed and conclusions reached.
+Auditing|Risk|Audit risk is the risk that the auditor expresses an inappropriate opinion when statements are?|Materially misstated|Perfectly accurate|Not printed in colour|Prepared in a spreadsheet|0|Audit risk concerns an inappropriate opinion on materially misstated financial statements.
+Business Law|Contracts|Under the Indian Contract Act an agreement enforceable by law is a?|Contract|Proposal only|Gift in every case|Notice of meeting|0|Section 2(h) defines a contract as an agreement enforceable by law.
+Business Law|Contracts|What does acceptance of a proposal form under the Indian Contract Act?|A promise|A completed sale in every case|A court decree|A guarantee in every case|0|Under section 2(b), a proposal when accepted becomes a promise.
+Business Law|Contracts|Which is an essential element of a valid contract under section 10?|Free consent of competent parties|A written document in every case|Registration in every case|A government party in every case|0|Section 10 requires free consent of competent parties and other stated conditions.
+Business Law|Contracts|Which factor can make consent not free under the Indian Contract Act?|Coercion|A lawful proposal|Competence to contract|A lawful object|0|Section 14 identifies coercion and other factors that can prevent consent from being free.
+Business Law|Contracts|A contract to do an act which becomes impossible after formation can become?|Void when the act becomes impossible|Automatically criminal|Always enforceable regardless of impossibility|A share certificate|0|Section 56 addresses an act becoming impossible or unlawful after a contract is made.
+Business Law|Contracts|Consideration under the Indian Contract Act may move from?|The promisee or any other person|Only a judge|Only a government officer|Only a stranger to the agreement|0|Section 2(d) describes consideration moving from the promisee or any other person at the promisor's desire.
+Business Law|Agency|An agent acts on behalf of whom?|The principal|Only a court|Only a creditor of the agent|The tax authority in every case|0|An agent represents or acts for a principal in dealings with third persons.
+Business Law|Contracts|A contingent contract depends on?|The happening or non-happening of a collateral event|A completed court judgment in every case|Payment in cash only|Registration of every promise|0|Section 31 defines a contingent contract by reference to a collateral event.
 Legal Aptitude|Constitution|Article 21 guarantees?|Right to life and personal liberty|Right to equality|Right to freedom of religion|Right against exploitation|0|Life and personal liberty.
 Legal Aptitude|Criminal law|Which Act replaced the Indian Penal Code from 1 July 2024?|Bharatiya Nyaya Sanhita|Bharatiya Sakshya Adhiniyam|CrPC|CPC|0|BNS came into force on 1 July 2024.
 Legal Aptitude|Maxims|'Res judicata' means?|A matter already judged|Let the master answer|Public policy|Right of way|0|Issue already decided by a competent court.
@@ -125,6 +181,26 @@ Legal Aptitude|Judiciary|Who administers the oath to the President?|Chief Justic
 Legal Aptitude|Consumer|Consumer Protection Act 2019 creates which district body?|District Consumer Disputes Redressal Commission|Lok Adalat|Tribunal|Lokpal|0|District Commissions hear consumer complaints.
 Legal Aptitude|Information|RTI Act was enacted in?|2005|2002|1995|2010|0|RTI Act, 2005.
 Legal Aptitude|Anti-corruption|Lokpal was established under which Act?|Lokpal and Lokayuktas Act, 2013|RTI Act|Consumer Protection Act|NGT Act|0|Enacted 2013.
+Legal Aptitude|Constitution|Which article guarantees equality before the law?|Article 14|Article 17|Article 21|Article 32|0|Article 14 guarantees equality before the law and equal protection of the laws.
+Legal Aptitude|Constitution|Which article abolishes untouchability?|Article 17|Article 19|Article 21|Article 25|0|Article 17 abolishes untouchability and forbids its practice in any form.
+Legal Aptitude|Constitution|Which article protects freedom of speech and expression for citizens?|Article 19(1)(a)|Article 20(2)|Article 22(1)|Article 29(2)|0|Article 19(1)(a) protects freedom of speech and expression, subject to constitutional restrictions.
+Legal Aptitude|Constitution|Which article provides protection against double jeopardy?|Article 20(2)|Article 14|Article 23|Article 44|0|Article 20(2) protects against being prosecuted and punished for the same offence more than once.
+Legal Aptitude|Constitution|Which article provides the right to move the Supreme Court for enforcement of fundamental rights?|Article 32|Article 48|Article 123|Article 280|0|Article 32 provides remedies for enforcement of fundamental rights.
+Legal Aptitude|Constitution|Which article empowers High Courts to issue writs?|Article 226|Article 110|Article 148|Article 356|0|Article 226 empowers High Courts to issue writs for fundamental rights and other purposes.
+Legal Aptitude|Constitution|Under which article may the President promulgate an ordinance when Parliament is not in session?|Article 123|Article 72|Article 280|Article 324|0|Article 123 sets out the President's ordinance-making power and its conditions.
+Legal Aptitude|Constitution|Which article describes Parliament's power to amend the Constitution?|Article 368|Article 110|Article 148|Article 262|0|Article 368 sets out the procedure and power to amend the Constitution.
+Legal Aptitude|Constitution|Which article states that no person shall be deprived of property save by authority of law?|Article 300A|Article 17|Article 51A|Article 368|0|Article 300A protects against deprivation of property without authority of law.
+Legal Aptitude|Constitution|Which article directs the State to provide free legal aid?|Article 39A|Article 20|Article 74|Article 110|0|Article 39A is a Directive Principle concerning equal justice and free legal aid.
+Legal Aptitude|Constitution|Fundamental Duties are listed under which article?|Article 51A|Article 32|Article 76|Article 324|0|Article 51A lists the Fundamental Duties of citizens.
+Legal Aptitude|Constitution|Which article defines a Money Bill?|Article 110|Article 124|Article 148|Article 226|0|Article 110 defines the matters that make a Bill a Money Bill.
+Legal Aptitude|Constitution|Which article provides for the appointment of the Attorney General for India?|Article 76|Article 51A|Article 280|Article 300A|0|Article 76 provides for an Attorney General appointed by the President.
+Legal Aptitude|Constitution|The Supreme Court's special leave jurisdiction is provided by which article?|Article 136|Article 17|Article 39A|Article 123|0|Article 136 provides the Supreme Court's discretionary special leave jurisdiction.
+Legal Aptitude|Constitution|Which article prohibits trafficking in human beings and forced labour?|Article 23|Article 24|Article 29|Article 50|0|Article 23 prohibits trafficking, begar and similar forms of forced labour.
+Legal Aptitude|Constitution|Which article protects freedom of conscience and the profession, practice and propagation of religion?|Article 25|Article 14|Article 32|Article 110|0|Article 25 protects that freedom subject to the conditions stated in the Constitution.
+Legal Aptitude|Legal principles|What does the maxim audi alteram partem require?|Hear the other side|No one may appeal|Every contract must be written|A judge must make law|0|Audi alteram partem is the natural justice principle of giving the other side an opportunity to be heard.
+Legal Aptitude|Legal principles|What does nemo judex in causa sua express?|No one should be a judge in their own cause|Every witness must be an expert|All contracts need registration|A court must always grant bail|0|The maxim expresses the rule against bias.
+Legal Aptitude|Legal principles|What is the ratio decidendi of a judgment?|The legal principle necessary for the decision|Every statement made by counsel|The court's case number|A witness's address|0|Ratio decidendi is the legal reasoning necessary to the court's decision.
+Legal Aptitude|Legal principles|What is an obiter dictum?|An observation not essential to the decision|The final sentence alone|A document filed with a claim|An order appointing a judge|0|An obiter dictum is an observation made in a judgment that is not essential to its decision.
 Child Development & Pedagogy|Development|Piaget's formal operational stage begins around?|11 years and above|2 to 7 years|7 to 11 years|0 to 2 years|0|Formal operational begins about 11 years.
 Child Development & Pedagogy|Theories|Zone of Proximal Development was proposed by?|Vygotsky|Piaget|Skinner|Bruner|0|Vygotsky's sociocultural theory.
 Child Development & Pedagogy|Inclusion|Inclusive education aims to?|Include children with disabilities in regular classrooms|Segregate children|Teach only gifted students|Teach only in English|0|Inclusion in regular schools.
@@ -351,6 +427,23 @@ export const MCQ_BANK: MCQ[] = ALL_RAW.map((x, i) => ({
  */
 export function bankSubjectFor(section: string): string[] {
   const s = section.toLowerCase();
+  // These sections require specialist or task-specific material, not generic GK.
+  // An empty pool makes the missing material visible instead of inventing coverage.
+  if (/^engineering subject/.test(s) || s === "subject paper" || s === "subject knowledge" || s === "part b & c (subject)") return [];
+  if (["listening", "reading", "writing", "speaking", "speaking & writing"].includes(s)) return [];
+  if (["general aptitude", "aptitude", "part a (general)", "general studies paper ii (csat)", "csat paper ii"].includes(s)) return ["Quantitative Aptitude", "Reasoning", "English"];
+  if (s === "general ability test" || s === "general test") return ["Quantitative Aptitude", "Reasoning", "English", "General Awareness", "Indian Polity", "Indian History", "Geography", "Economy", "General Science"];
+  if (s === "indian & global environment") return ["General Awareness"];
+  if (s === "data analysis & sufficiency" || s === "data insights") return ["Data Interpretation", "Quantitative Aptitude", "Reasoning"];
+  if (s === "logical reasoning" || s === "data interpretation & logical reasoning") return ["Reasoning", "Data Interpretation"];
+  if (s === "physics & chemistry") return ["Physics", "Chemistry"];
+  if (s === "reading & writing") return ["English"];
+  if (s === "accounting & auditing") return ["Accounting", "Auditing"];
+  if (s === "accounting" || s === "fundamentals of accounting") return ["Accounting"];
+  if (s === "cost & management accounting") return ["Cost Accounting"];
+  if (s === "taxation") return ["Taxation"];
+  if (s === "auditing") return ["Auditing"];
+  if (s === "business law") return ["Business Law"];
   if (s.includes("botany")) return ["Botany"];
   if (s.includes("zoology")) return ["Zoology"];
   if (s === "biology") return ["Botany", "Zoology", "Biology"];
@@ -370,5 +463,5 @@ export function bankSubjectFor(section: string): string[] {
   if (s.includes("economy") || s.includes("economics") || s.includes("finance")) return ["Economy", "General Awareness"];
   if (s.includes("general science") || s.includes("science")) return ["General Science"];
   if (s.includes("general awareness") || s.includes("general knowledge") || s.includes("general studies") || s.includes("current affairs")) return ["General Awareness", "Indian Polity", "Indian History", "Geography", "Economy", "General Science"];
-  return ["General Awareness"];
+  return [];
 }

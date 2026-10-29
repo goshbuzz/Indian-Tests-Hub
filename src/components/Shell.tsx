@@ -139,7 +139,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   return (
     <div dir="ltr" className="min-h-screen bg-[#f4f1e8] text-stone-900">
-      <header className="tricolor-header sticky top-0 z-40 border-b border-emerald-900/10 bg-[#01411C] text-white">
+      <header className="tricolor-header sticky top-0 z-40 border-b border-orange-900/10 bg-[#803800] text-white">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
           <Link href="/start" className="flex items-center gap-2 font-semibold tracking-tight">
             <Logo size={32} />

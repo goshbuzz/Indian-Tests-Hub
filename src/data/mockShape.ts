@@ -10,6 +10,8 @@ export type PaperShape = {
   negative: boolean;
   negativeValue: number;
   slots: Slot[];
+  /** The official pattern cannot be filled from the available distinct items. */
+  short: boolean;
   note: string;
 };
 
@@ -26,7 +28,7 @@ export function negativeValueOf(f: Family): number {
 /** Bank questions available for a subject list (used to cap papers honestly). */
 function bankCount(subjects: string[]): number {
   const keys = new Set(subjects.flatMap((s) => bankSubjectFor(s)));
-  return MCQ_BANK.filter((m) => keys.has(m.subject)).length;
+  return new Set(MCQ_BANK.filter((m) => keys.has(m.subject)).map((m) => m.question_text)).size;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -45,12 +47,16 @@ export function paperShape(testId: string, _category?: string): PaperShape {
       slot.n = Math.max(0, Math.min(slot.n, have));
     }
   }
+  // Sections may share a pool. Count the union too, rather than promising the
+  // same distinct question in multiple sections.
+  if (bankCount(slots.map((slot) => slot.subject ?? "")) < slots.reduce((sum, slot) => sum + slot.n, 0)) short = true;
   if (short) notes.push("Practice bank for some sections is still being built, so this paper is shorter than the official pattern.");
   return {
     minutes: f.minutes,
     negative: negativeValueOf(f) > 0,
     negativeValue: negativeValueOf(f),
     slots: slots.filter((s) => s.n > 0),
+    short,
     note: notes.join(" "),
   };
 }
