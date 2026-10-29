@@ -39,7 +39,7 @@ export default function StartPage() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
           <span className="rounded-full bg-white/15 px-3 py-1">🔥 {t.streak}: {streak}</span>
-          <span className="rounded-full bg-[#C5A44E] px-3 py-1 text-[#01411C]">{t.points}: {points}</span>
+          <span className="rounded-full bg-[#FF9933] px-3 py-1 text-[#01411C]">{t.points}: {points}</span>
           {!user && (
             <Link href="/login" className="rounded-full bg-white px-3 py-1 text-emerald-900">
               {t.login}

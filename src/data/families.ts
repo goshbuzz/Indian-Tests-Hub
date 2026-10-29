@@ -119,6 +119,12 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
     ["Quantitative Ability", 40, 40], ["Verbal Ability", 40, 40], ["Logical Reasoning", 40, 40],
   ], "Class 12 with the required percentage; IIM Indore/Rohtak notice applies.",
   "₹1,500–2,000 (approx.)", false, "Confirm section counts in the IIM notice."),
+  // JIPMAT details are cross-checked against a secondary source; confirm the current NTA bulletin.
+  // https://www.imsindia.com/blog/jipmat/jipmat-exam-pattern/
+  fam("jipmat", "JIPMAT", 150, N1, [
+    ["Quantitative Aptitude", 33, 132], ["Logical Reasoning", 33, 132], ["Verbal Ability", 34, 136],
+  ], "Class 12 or appearing; institute-specific eligibility applies. Check the NTA bulletin.",
+  "See the current NTA bulletin", false, "2026: +4 per correct answer; −1 per incorrect answer. Logical reasoning includes data interpretation; verbal ability includes reading comprehension."),
   fam("clat-ug", "CLAT (UG 5-year LLB)", 120, N025, [
     ["English", 24, 24], ["General Knowledge & Current Affairs", 30, 30], ["Legal Reasoning", 30, 30], ["Logical Reasoning", 24, 24], ["Quantitative Techniques", 12, 12],
   ], "Class 12 with 45% (40% reserved) or as the Consortium notice states.",
@@ -211,6 +217,12 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   "₹1,000–2,500 (approx.)", false, "Generic PG management aptitude pattern. Confirm the current notice."),
 
   // ───── Central & state recruitment (SSC / RRB / state SSCs) ─────
+  // Source: SSC Phase-XIV/2026 Selection Posts notice, sections 15.1–15.2.
+  // https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_RHQ_2026_phase_xiv.pdf
+  fam("ssc-selection-post", "SSC Selection Posts (CBE)", 60, N050, [
+    ["General Intelligence & Reasoning", 25, 50], ["General Awareness", 25, 50], ["Quantitative Aptitude", 25, 50], ["English Language", 25, 50],
+  ], "Eligibility varies by post and examination level; check the current SSC notice.",
+  "See the current SSC notice", true, "2026 notice: four 15-minute sections; separate CBE levels for matriculation, higher secondary and graduation posts."),
   fam("cgl", "SSC CGL Tier 1", 60, N050, [
     ["General Intelligence & Reasoning", 25, 50], ["General Awareness", 25, 50], ["Quantitative Aptitude", 25, 50], ["English Comprehension", 25, 50],
   ], "Bachelor's degree from a recognised university; age and nationality rules per SSC notice.",

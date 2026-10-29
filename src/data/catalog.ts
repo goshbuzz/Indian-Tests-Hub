@@ -42,6 +42,7 @@ nata|NATA|नाटा|A|I|Council of Architecture|https://www.nata.in|nata
 iiser-iat|IISER Aptitude Test (IAT)|आईआईएसईआर योग्यता परीक्षा (IAT)|A|I|IISERs|https://www.iiseradmission.in|iiser-iat
 ipmat-indore|IPMAT (IIM Indore)|आईपीएमएटी (आईआईएम इंदौर)|A|I|IIM Indore|https://www.iimidr.ac.in|ipmat
 ipmat-rohtak|IPMAT (IIM Rohtak)|आईपीएमएटी (आईआईएम रोहतक)|A|I|IIM Rohtak|https://www.iimrohtak.ac.in|ipmat
+jipmat|JIPMAT (Integrated Management)|जिपमैट (एकीकृत प्रबंधन)|A|I|National Testing Agency (NTA)|https://exams.nta.nic.in/jipmat/|jipmat
 set-sym|SET (Symbiosis UG)|सेट (सिम्बायोसिस यूजी)|A|I|Symbiosis International|https://www.set-test.org|aptitude-ug
 nchm|NCHM JEE (Hotel Management)|एनसीएचएम जेईई (होटल प्रबंधन)|A|I|National Testing Agency (NTA)|https://nchmjee.nta.nic.in|aptitude-ug
 aieea-ug|ICAR AIEEA (UG)|आईसीएआर एआईईईए (यूजी)|A|I|NTA / ICAR|https://icar.nta.ac.in|agri-ug
@@ -89,6 +90,9 @@ nest|NEST (NISER)|नेस्ट (NISER)|G|G|NISER Bhubaneswar|https://www.nest
 jest|JEST (Physics research)|जेस्ट (भौतिकी शोध)|G|G|JEST Consortium|https://www.jest.org.in|research-science
 icar-pg|ICAR AIEEA (PG) / ICAR JRF|आईसीएआर एआईईईए (पीजी)|G|G|NTA / ICAR|https://icar.nta.ac.in|agri-ug
 cgl|SSC CGL (Combined Graduate Level)|एसएससी सीजीएल (कंबाइंड ग्रेजुएट लेवल)|R|G|Staff Selection Commission (SSC)|https://ssc.gov.in|cgl
+ssc-selection-matric|SSC Selection Posts (Matriculation)|एसएससी चयन पद (मैट्रिक स्तर)|R|M|Staff Selection Commission (SSC)|https://ssc.gov.in|ssc-selection-post
+ssc-selection-higher-secondary|SSC Selection Posts (Higher Secondary)|एसएससी चयन पद (उच्च माध्यमिक स्तर)|R|I|Staff Selection Commission (SSC)|https://ssc.gov.in|ssc-selection-post
+ssc-selection-graduate|SSC Selection Posts (Graduate)|एसएससी चयन पद (स्नातक स्तर)|R|G|Staff Selection Commission (SSC)|https://ssc.gov.in|ssc-selection-post
 chsl|SSC CHSL (10+2 Level)|एसएससी सीएचएसएल (10+2 स्तर)|R|I|Staff Selection Commission (SSC)|https://ssc.gov.in|chsl
 mts|SSC MTS (Multi-Tasking Staff)|एसएससी एमटीएस (मल्टी-टास्किंग स्टाफ)|R|M|Staff Selection Commission (SSC)|https://ssc.gov.in|mts
 ssc-gd|SSC GD Constable|एसएससी जीडी कॉन्स्टेबल|PO|M|Staff Selection Commission (SSC)|https://ssc.gov.in|ssc-gd

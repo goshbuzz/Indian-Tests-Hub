@@ -121,7 +121,7 @@ function MockInner() {
               {hi ? "प्रश्न" : "Q"} {i + 1} / {questions.length}
             </div>
           </div>
-          <div className="rounded-full bg-[#C5A44E] px-3 py-1 font-mono text-[#01411C]">
+          <div className="rounded-full bg-[#FF9933] px-3 py-1 font-mono text-[#01411C]">
             {mm}:{ss}
           </div>
         </div>
@@ -181,7 +181,7 @@ function MockInner() {
                 {t.next}
               </button>
             ) : (
-              <button onClick={finish} className="rounded-full bg-[#C5A44E] px-4 py-2 text-sm text-[#01411C]">
+              <button onClick={finish} className="rounded-full bg-[#FF9933] px-4 py-2 text-sm text-[#01411C]">
                 {t.submit}
               </button>
             )}

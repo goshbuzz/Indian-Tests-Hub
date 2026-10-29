@@ -107,7 +107,7 @@ export default function ProfilePage() {
         <h2 className="font-semibold">{t.badges}</h2>
         <div className="mt-2 flex flex-wrap gap-2">
           {(badges.length ? badges : ["Welcome"]).map((b) => (
-            <span key={b} className="rounded-full bg-[#C5A44E] px-3 py-1 text-sm text-[#01411C]">
+            <span key={b} className="rounded-full bg-[#FF9933] px-3 py-1 text-sm text-[#01411C]">
               {b}
             </span>
           ))}
