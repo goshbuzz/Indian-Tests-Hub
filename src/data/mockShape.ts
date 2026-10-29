@@ -42,6 +42,10 @@ export function paperShape(testId: string, _category?: string): PaperShape {
   if (test?.family === "cuet-ug") notes.push("Practice covers the General Aptitude Test only, not language or domain papers.");
   if (test?.family === "upsc-prelims") notes.push("This practice combines the papers; the official exam has two separately timed two-hour papers, with Paper II qualifying.");
   if (test?.family === "cat") notes.push("Section counts are approximate; practice uses MCQs only and does not enforce separate section timers.");
+  if (test?.family === "iiser-iat") notes.push("Shared practice questions are not official papers and may differ in difficulty.");
+  if (test?.family === "nchm-jee") notes.push("The service-sector section is not yet available in practice.");
+  if (test?.family === "cmat") notes.push("The innovation and entrepreneurship section is not yet available in practice.");
+  if (test?.family === "ugc-net-p1" || test?.family === "ugc-net-p2") notes.push("Practice covers only this paper; the official examination combines both papers in one 180-minute session without a break. Paper I practice covers only selected skills.");
   // Cap each slot to what the practice bank holds, and say so.
   let short = false;
   for (const slot of slots) {

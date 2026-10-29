@@ -436,8 +436,20 @@ function vocabItems(): Raw[] {
   return out;
 }
 
-function parseHand(): Raw[] {
-  return HAND.trim()
+// Additional original practice items are appended after the original bank to preserve existing IDs.
+const IAT_MATH = `
+Mathematics|Quadratic equations|What are the roots of x² − 5x + 6 = 0?|2 and 3|1 and 6|−2 and −3|−1 and −6|0|Factor as (x − 2)(x − 3) = 0.
+Mathematics|Calculus|What is the derivative of sin x with respect to x?|cos x|−cos x|sin x|−sin x|0|The derivative of sin x is cos x.
+Mathematics|Calculus|What is the indefinite integral of 1 with respect to x?|x + C|1 + C|x² + C|ln x + C|0|The derivative of x + C is 1.
+Mathematics|Matrices|What is the determinant of the 2 by 2 matrix with rows (1, 2) and (3, 4)?|−2|2|10|−10|0|The determinant is 1 × 4 − 2 × 3 = −2.
+Mathematics|Vectors|What is the dot product of (1, 2) and (3, 4)?|11|10|8|5|0|The dot product is 1 × 3 + 2 × 4 = 11.
+Mathematics|Probability|Two fair coins are tossed independently. What is the probability that both land heads?|1/4|1/2|3/4|1/3|0|There is one favourable outcome among four equally likely outcomes.
+Mathematics|Coordinate geometry|What is the slope of the line y = 2x + 1?|2|1|−1|−2|0|In y = mx + c the slope is the coefficient m of x.
+Mathematics|Limits|For x measured in radians, what is the limit of sin x / x as x tends to zero?|1|0|−1|Does not exist|0|The standard trigonometric limit is 1 when the angle is in radians.
+`;
+
+function parseHand(input = HAND): Raw[] {
+  return input.trim()
     .split("\n")
     .filter((l) => l.trim())
     .map((line) => {
@@ -446,7 +458,7 @@ function parseHand(): Raw[] {
     });
 }
 
-const ALL_RAW: Raw[] = [...parseHand(), ...quantItems(), ...reasoningItems(), ...vocabItems()];
+const ALL_RAW: Raw[] = [...parseHand(), ...quantItems(), ...reasoningItems(), ...vocabItems(), ...parseHand(IAT_MATH)];
 
 /** Full bank, test-agnostic. Each item has test_id "bank" and is re-tagged per test in coverage.ts. */
 const seenQuestionTexts = new Set<string>();
@@ -482,11 +494,15 @@ export function bankSubjectFor(section: string): string[] {
   if (["listening", "reading", "writing", "speaking", "speaking & writing"].includes(s)) return [];
   if (["general aptitude", "aptitude", "part a (general)", "general studies paper ii (csat)", "csat paper ii"].includes(s)) return ["Quantitative Aptitude", "Reasoning", "English"];
   if (s === "general aptitude test") return ["Quantitative Aptitude", "Reasoning", "Data Interpretation", "General Awareness", "Indian Polity", "Indian History", "Geography", "Economy", "General Science"];
+  // UGC-NET Paper I has ten units; this shared pool covers only selected skills.
+  if (s === "teaching & research aptitude") return ["Reasoning", "English", "Data Interpretation"];
+  if (s === "aptitude for service sector" || s === "innovation & entrepreneurship") return [];
   if (s === "general ability test" || s === "general test") return ["Quantitative Aptitude", "Reasoning", "English", "General Awareness", "Indian Polity", "Indian History", "Geography", "Economy", "General Science"];
   if (s === "indian & global environment") return ["General Awareness"];
   if (s === "economic & business environment") return ["Economy", "General Awareness"];
   if (s === "data analysis & sufficiency" || s === "data insights") return ["Data Interpretation", "Quantitative Aptitude", "Reasoning"];
   if (s === "logical reasoning" || s === "data interpretation & logical reasoning") return ["Reasoning", "Data Interpretation"];
+  if (s === "mathematics (iat)") return ["Mathematics"];
   if (s === "physics & chemistry") return ["Physics", "Chemistry"];
   if (s === "reading & writing") return ["English"];
   if (s === "accounting & auditing") return ["Accounting", "Auditing"];

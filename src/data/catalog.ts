@@ -44,7 +44,7 @@ ipmat-indore|IPMAT (IIM Indore)|आईपीएमएटी (आईआईएम 
 ipmat-rohtak|IPMAT (IIM Rohtak)|आईपीएमएटी (आईआईएम रोहतक)|A|I|IIM Rohtak|https://www.iimrohtak.ac.in|ipmat
 jipmat|JIPMAT (Integrated Management)|जिपमैट (एकीकृत प्रबंधन)|A|I|National Testing Agency (NTA)|https://exams.nta.nic.in/jipmat/|jipmat
 set-sym|SET (Symbiosis UG)|सेट (सिम्बायोसिस यूजी)|A|I|Symbiosis International|https://www.set-test.org|aptitude-ug
-nchm|NCHM JEE (Hotel Management)|एनसीएचएम जेईई (होटल प्रबंधन)|A|I|National Testing Agency (NTA)|https://nchmjee.nta.nic.in|aptitude-ug
+nchm|NCHM JEE (Hotel Management)|एनसीएचएम जेईई (होटल प्रबंधन)|A|I|National Testing Agency (NTA)|https://exams.nta.ac.in/NCHM/|nchm-jee
 aieea-ug|ICAR AIEEA (UG)|आईसीएआर एआईईईए (यूजी)|A|I|NTA / ICAR|https://icar.nta.ac.in|agri-ug
 clat-ug|CLAT (UG – 5-year LLB)|सीएलएटी (यूजी – 5 वर्षीय एलएलबी)|A|I|Consortium of NLUs|https://consortiumofnlus.ac.in|clat-ug
 ailet|AILET (NLU Delhi)|एआईएलईटी (एनएलयू दिल्ली)|A|I|NLU Delhi|https://nludelhi.ac.in|clat-ug
@@ -129,13 +129,13 @@ uco-so|UCO Bank SO|यूको बैंक एसओ|B|G|UCO Bank|https://www.
 dsssb|DSSSB (Delhi Subordinate Services)|डीएसएसएसबी (दिल्ली अधीनस्थ सेवाएँ)|R|G|Delhi Subordinate Services Selection Board|https://dsssb.delhi.gov.in|dsssb
 aai-je|AAI Junior Executive|एएआई जूनियर एग्जीक्यूटिव|R|G|Airports Authority of India|https://www.aai.aero|aai-je
 fci|FCI Assistant / Manager|एफसीआई असिस्टेंट / मैनेजर|R|G|Food Corporation of India|https://fci.gov.in|fci
-epfo-ssa|EPFO SSA / Stenographer|ईपीएफओ एसएसए|R|G|Employees' Provident Fund Organisation|https://www.epfindia.gov.in|cgl
-esic|ESIC UDC / Stenographer|ईएसआईसी यूडीसी / स्टेनोग्राफर|R|G|Employees' State Insurance Corporation|https://www.esic.gov.in|cgl
+epfo-ssa|EPFO SSA / Stenographer|ईपीएफओ एसएसए|R|G|Employees' Provident Fund Organisation|https://www.epfindia.gov.in|recruitment-generic
+esic|ESIC UDC / Stenographer|ईएसआईसी यूडीसी / स्टेनोग्राफर|R|G|Employees' State Insurance Corporation|https://www.esic.gov.in|recruitment-generic
 postal-pa|India Post Postal / Sorting Assistant|इंडिया पोस्ट पोस्टल / सॉर्टिंग असिस्टेंट|R|I|Department of Posts|https://www.indiapost.gov.in|postal
 aiims-cre|AIIMS Nursing Officer (CRE)|एम्स नर्सिंग ऑफिसर (सीआरई)|R|G|AIIMS|https://www.aiimsexams.ac.in|aiims-cre
 barc-oces|BARC OCES / DGFS|बीएआरसी ओसीईएस / डीजीएफएस|R|G|Bhabha Atomic Research Centre|https://www.barc.gov.in|barc
 drdo-ceptam|DRDO CEPTAM|डीआरडीओ सेप्टम|R|G|DRDO|https://www.drdo.gov.in|drdo-ceptam
-nielit|NIELIT Recruitment|नीलिट भर्ती|R|G|NIELIT|https://nielit.gov.in|cgl
+nielit|NIELIT Recruitment|नीलिट भर्ती|R|G|NIELIT|https://nielit.gov.in|recruitment-generic
 ukssc|UKSSSC Group C|यूकेएसएसएससी ग्रुप सी|R|I|UKSSSC Uttarakhand|https://uksssc.gov.in|state-ssc
 upsssc-pet|UPSSSC PET (Eligibility Test)|यूपीएसएसएससी पीईटी|R|I|UPSSSC Uttar Pradesh|https://upsssc.gov.in|state-ssc
 rssb-patwari|RSSB Patwari / Rajasthan Staff Selection|आरएसएसबी पटवारी / राजस्थान कर्मचारी चयन|R|I|RSSB Rajasthan|https://rssb.rajasthan.gov.in|state-ssc
@@ -152,7 +152,7 @@ kerala-lp|Kerala PSC LD Clerk / Category Exams|केरल पीएससी �
 upsc-cse|UPSC Civil Services (IAS / IPS / IFS)|यूपीएससी सिविल सेवा (आईएएस / आईपीएस / आईएफएस)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-prelims
 upsc-ifos|UPSC IFoS (Indian Forest Service)|यूपीएससी आईएफओएस (भारतीय वन सेवा)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-prelims
 upsc-ies|UPSC IES / ISS|यूपीएससी आईईएस / आईएसएस|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-ies-iss
-upsc-epfo|UPSC EPFO (EO / AO)|यूपीएससी ईपीएफओ (ईओ / एओ)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|cgl
+upsc-epfo|UPSC EPFO (EO / AO)|यूपीएससी ईपीएफओ (ईओ / एओ)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|recruitment-generic
 upsc-ese|UPSC ESE (Engineering Services)|यूपीएससी ईएसई (इंजीनियरिंग सेवाएँ)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-ese
 uppsc-pcs|UPPSC PCS (Uttar Pradesh)|यूपीपीएससी पीसीएस (उत्तर प्रदेश)|P|G|UPPSC Uttar Pradesh|https://uppsc.up.nic.in|state-pcs
 bpsc-cce|BPSC CCE (Bihar)|बीपीएससी सीसीई (बिहार)|P|G|BPSC Bihar|https://bpsc.bih.nic.in|state-pcs
