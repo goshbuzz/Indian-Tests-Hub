@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ALL_ALERTS } from "@/data/coverage";
+import { alertDateLabel, newestAlertFirst } from "@/data/alertDates";
 import { JOBS } from "@/data/jobs";
 import { CATEGORY_META, TESTS } from "@/data/tests";
 import { JsonLd } from "@/components/JsonLd";
@@ -114,7 +115,7 @@ const FEATURES = [
 
 export default function HomePage() {
   const popular = TESTS.filter((t) => t.priority).slice(0, 6);
-  const latestAlerts = [...ALL_ALERTS].sort((a, b) => b.published_at.localeCompare(a.published_at)).slice(0, 3);
+  const latestAlerts = [...ALL_ALERTS].sort(newestAlertFirst).slice(0, 3);
   const latestJobs = JOBS.slice(0, 3);
 
   const homeLd = [
@@ -345,7 +346,8 @@ export default function HomePage() {
         {/* Jobs and alerts */}
         <section className="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:pb-16 lg:grid-cols-2">
           <div className="rounded-3xl border border-stone-200 bg-white p-6">
-            <h2 className="text-xl font-bold text-[#01411C]">Open recruitment</h2>
+            <h2 className="text-xl font-bold text-[#01411C]">Recruitment notices</h2>
+            {latestJobs.length === 0 && <p className="mt-4 text-sm text-stone-600">No verified recruitment listings are available yet. Check the official conducting body for current openings.</p>}
             <ul className="mt-4 space-y-3">
               {latestJobs.map((j) => (
                 <li key={j.id} className="rounded-xl border border-stone-200 p-3">
@@ -369,7 +371,7 @@ export default function HomePage() {
               {latestAlerts.map((a) => (
                 <li key={a.id} className="rounded-xl border border-stone-200 p-3">
                   <div className="font-medium text-stone-900">{a.title}</div>
-                  <div className="mt-0.5 text-xs text-stone-500">{a.published_at.slice(0, 10)}</div>
+                  <div className="mt-0.5 text-xs text-stone-500">{alertDateLabel(a)}</div>
                 </li>
               ))}
             </ul>

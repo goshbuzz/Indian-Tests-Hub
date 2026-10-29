@@ -8,6 +8,11 @@ export function guidesFor(testId: string): Guide[] {
   const t = TEST_BY_ID[testId];
   const f = familyOf(testId);
   if (!t || !f) return [];
+  if (f.sections.length === 0) return [{
+    test_id: testId,
+    title: "Start with the official notice",
+    body: "This entry has no representative mock in the current bank. Check the official notice for requirements, syllabus and any examination scheme.",
+  }];
   const subjects = f.sections.map((s) => s[0]).join(", ");
   return [
     {

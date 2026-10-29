@@ -3,6 +3,7 @@
 import { Fragment, useState } from "react";
 import Link from "next/link";
 import { ALL_ALERTS } from "@/data/coverage";
+import { alertDateLabel, newestAlertFirst } from "@/data/alertDates";
 import { TESTS, tName } from "@/data/tests";
 import { dict } from "@/lib/i18n";
 import { useStore } from "@/lib/store";
@@ -15,7 +16,7 @@ export default function AlertsPage() {
   const [only, setOnly] = useState(false);
   const items = [...ALL_ALERTS]
     .filter((a) => !only || saved.includes(a.test_id))
-    .sort((a, b) => b.published_at.localeCompare(a.published_at));
+    .sort(newestAlertFirst);
 
   return (
     <div>
@@ -45,8 +46,9 @@ export default function AlertsPage() {
               </Link>
               <div className="font-medium">{a.title}</div>
               <p className="text-sm text-stone-600">{a.body}</p>
+              <a className="mt-1 inline-block text-sm text-emerald-800 underline" href={a.source_url} target="_blank" rel="noreferrer">{lang === "hi" ? "आधिकारिक सूचना" : "Official notice"}</a>
               <div className="mt-1 text-xs text-stone-400">
-                {a.type} · {a.published_at.slice(0, 10)}
+                {a.type} · {alertDateLabel(a, lang === "hi")}
               </div>
             </li>
             </Fragment>

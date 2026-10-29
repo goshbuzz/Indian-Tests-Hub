@@ -94,7 +94,10 @@ export type Alert = {
   title: string;
   body: string;
   source_url: string;
-  published_at: string;
+  /** Source publication date, only when stated by the conducting body. */
+  published_at?: string;
+  /** Date the source was checked, not a claim about when it was published. */
+  checked_at: string;
 };
 
 export type User = {

@@ -9,8 +9,9 @@ export function generateStaticParams() {
   return TESTS.map((t) => ({ id: t.id }));
 }
 
-export function generateMetadata({ params }: { params: { id: string } }): Metadata {
-  const test = TESTS.find((t) => t.id === params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const test = TESTS.find((t) => t.id === id);
   if (!test) return { title: { absolute: "Test not found" }, robots: { index: false } };
   // SERP-friendly lengths (Phase 5): ~60 visible title chars incl. the template suffix,
   // ~160 description chars. Long exam names fall back to a shorter base form.
@@ -18,7 +19,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   const long = `${test.name} Prep India 2026 — Syllabus, MCQs, Mocks`;
   const title = long.length <= 58 ? long : `${test.name} Prep — Syllabus, MCQs & Mocks`;
   const description = clamp(
-    `${test.name} by ${test.conducting_body}: ${test.format_description} Free MCQ bank, 10 timed mocks, apply on the official site.`,
+    `${test.name} by ${test.conducting_body}: ${test.format_description} Practice coverage varies; check the official notice.`,
     168
   );
   const url = `${SITE_URL}/tests/${test.id}`;
@@ -32,8 +33,9 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   };
 }
 
-export default function TestLayout({ children, params }: { children: React.ReactNode; params: { id: string } }) {
-  const test = TESTS.find((t) => t.id === params.id);
+export default async function TestLayout({ children, params }: { children: React.ReactNode; params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const test = TESTS.find((t) => t.id === id);
   const faqs = test ? faqsForTest(test.name, test.conducting_body, test.format_description) : [];
   const ld = test
     ? [

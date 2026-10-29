@@ -3,7 +3,8 @@ import type { MCQ } from "@/lib/types";
 /** Only schemes verified for this mock are overridden. Other mocks retain their existing scoring. */
 export function verifiedMockRules(family: string | undefined) {
   if (family === "ssc-selection-post") return { correct: 2, wrong: 0.5, sectionSeconds: 15 * 60 };
-  if (family === "jipmat") return { correct: 4, wrong: 1, sectionSeconds: 0 };
+  if (family === "jipmat" || family === "jee-main-1" || family === "neet") return { correct: 4, wrong: 1, sectionSeconds: 0 };
+  if (family === "cuet-ug") return { correct: 5, wrong: 1, sectionSeconds: 0 };
   return undefined;
 }
 

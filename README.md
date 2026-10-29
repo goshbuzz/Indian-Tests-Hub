@@ -1,6 +1,6 @@
 # Indian Tests Hub
 
-A free, independent self-study hub for Indian competitive and entrance exams: NEET, JEE, CUET, GATE, CAT, UPSC, SSC, RRB, IBPS, SBI, state PSCs, police, teaching, judicial and armed forces. Each exam has its official pattern, a syllabus checklist, practice MCQs (English), timed mocks, job and alert pages, and a link to the conducting body's official site.
+A free, independent self-study hub for Indian competitive and entrance exams: NEET, JEE, CUET, GATE, CAT, UPSC, SSC, RRB, IBPS, SBI, state PSCs, police, teaching, judicial and armed forces. Coverage varies: exam patterns may be approximate, and practice material or mocks may be incomplete or unavailable. Check the conducting body's official notice.
 
 This project is not an official exam portal and is not affiliated with any exam body. Apply only on the official site of the conducting body.
 
@@ -25,24 +25,29 @@ It is a fork of Pakistan Tests Hub, rebuilt for India.
 | `src/data/tests.ts` | Parses the catalogue into tests and provides category metadata and the `tName()` helper. |
 | `src/data/coverage.ts`, `mockShape.ts`, `sections.ts` | Mock paper construction and syllabus lookup. |
 
-Each test's pattern, mock shape and default eligibility come from its family. Syllabus comes from the subject name. Hindi names come from `SUBJECT_HI`.
+Each test's pattern, mock shape and default eligibility come from its family. Syllabus comes from the subject name. Hindi names come from `SUBJECT_HI`. See [the coverage benchmark](docs/coverage-benchmark.md) for reproducible counts and competitor comparison.
 
 ### Honest coverage
 
-- The catalogue lists **230 exams** (see `src/data/catalog.ts`), below the earlier target of 300+. Of these, **31 exam entries** have patterns marked verified against an official notice; the remaining 199 are labelled approximate.
-- **Verified** patterns are marked `verified: true` on their family. Approximate patterns should be checked against the current official notice. New entries may be included with an approximate label while their patterns await verification.
+- The catalogue lists **230 exam entries** (see `src/data/catalog.ts`). **8 entries** have patterns marked verified with a linked official notice; the remaining 222 are labelled approximate or have no representative exam pattern. Unsourced older verified flags are treated as unverified until checked. Verification is cycle-specific, not a guarantee about future exams.
+- **Verified** patterns require both a verified family flag and a linked official source. Approximate patterns should be checked against the current official notice. New entries may be included with an approximate label while their patterns await verification.
 - Practice coverage varies by exam and section. Some subject-specific banks are small or unavailable; mock papers can be shorter than the listed pattern, and unavailable sections are not filled with unrelated general-awareness questions.
 - Practice MCQs do not reproduce written, speaking, listening or other non-MCQ tasks. Check `npx tsx scripts/verify-banks.mts` for current section shortfalls; the script exits nonzero while issues remain.
-- Official apply links point only to the conducting body's site. Past-paper links are not constructed where they could not be verified.
+- Checked pattern sources and cycles are linked on the affected exam pages. Official past-paper links are included only where checked, and point to the conducting body's own files. Jobs and alerts are manually curated, not automatically synced; always confirm current details on the official notice.
 
 ## Scripts
 
+Use Node 20.9 or newer (see `package.json` for the precise supported ranges). Next.js 16 currently warns that React 18 support is deprecated; a future React 19 migration is still needed.
+
 ```bash
-npm install
+npm ci
+npm run lint
 npm run dev        # local development
 npm run build      # production build
 npx tsc --noEmit -p .
 npx tsx scripts/verify-banks.mts   # MCQ subject leaks, empty mock slots, thin papers
+npx tsx scripts/check-official-data.mts # audited patterns, paper links and API
+npx tsx scripts/coverage-report.mts # unique questions vs shared per-exam instances
 npx tsx scripts/check-seo.mts      # run after `npm run build`; checks prerendered HTML
 ```
 

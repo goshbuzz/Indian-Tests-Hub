@@ -38,6 +38,10 @@ export function paperShape(testId: string, _category?: string): PaperShape {
   const sections = f.sections.filter((s) => s[1] > 0);
   const slots: Slot[] = sections.map(([subject, n]) => ({ kind: "mcq", n, subject }));
   const notes: string[] = [`${f.label}: ${f.sections.reduce((a, s) => a + s[1], 0)} questions, ${f.minutes} minutes.`];
+  if (test?.family === "jee-main-1") notes.push("Practice uses MCQs only; the official paper also has numerical-entry questions.");
+  if (test?.family === "cuet-ug") notes.push("Practice covers the General Aptitude Test only, not language or domain papers.");
+  if (test?.family === "upsc-prelims") notes.push("This practice combines the papers; the official exam has two separately timed two-hour papers, with Paper II qualifying.");
+  if (test?.family === "cat") notes.push("Section counts are approximate; practice uses MCQs only and does not enforce separate section timers.");
   // Cap each slot to what the practice bank holds, and say so.
   let short = false;
   for (const slot of slots) {

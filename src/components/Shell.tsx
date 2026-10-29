@@ -46,6 +46,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
     : [];
 
   useEffect(() => {
+    // Clear the search overlay when client navigation changes the page.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false);
     setQ("");
   }, [path]);

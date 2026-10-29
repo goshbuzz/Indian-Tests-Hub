@@ -38,6 +38,8 @@ function MockInner() {
   const [showAd, setShowAd] = useState(false);
 
   useEffect(() => {
+    // Reset the active attempt when the draw or exam changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setI(0);
     setSectionIndex(0);
     setAns({});
@@ -54,6 +56,8 @@ function MockInner() {
     const count = sectionSeconds ? sections.length : 1;
     const started = Date.now();
     currentSection.current = 0;
+    // Keep the displayed clock in sync when a new draw starts.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLeft(duration);
     const tick = () => {
       const position = timerPosition((Date.now() - started) / 1000, duration, count);
@@ -68,13 +72,6 @@ function MockInner() {
     return () => clearInterval(tm);
   }, [done, id, year, n, r, cfg, shape.minutes, sectionSeconds, sections, questions.length]);
 
-  // Finish from an effect rather than inside the interval callback: it sees the latest answers.
-  useEffect(() => {
-    if (left === 0 && !done && questions.length > 0) finish();
-    // finish intentionally sees current answers whenever the timer reaches zero.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [left, done, questions.length]);
-
   function finish() {
     if (done) return;
     setDone(true);
@@ -88,6 +85,15 @@ function MockInner() {
     });
     setShowAd(true);
   }
+
+  // Finish from an effect rather than inside the interval callback: it sees the latest answers.
+  useEffect(() => {
+    // The timer must submit once using the latest answer state at expiry.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (left === 0 && !done && questions.length > 0) finish();
+    // finish intentionally sees current answers whenever the timer reaches zero.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [left, done, questions.length]);
 
   if (!test || questions.length === 0) {
     return (

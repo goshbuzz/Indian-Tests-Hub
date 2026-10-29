@@ -30,7 +30,7 @@ ojee|OJEE (Odisha)|ओजेईई (ओडिशा)|A|I|CSVTU / BPUT Odisha|htt
 upsee|UPSEE (Uttar Pradesh)|यूपीएसईई (उत्तर प्रदेश)|A|I|AKTU Lucknow|https://www.aktu.ac.in|eng-180
 bceceb|BCECE (Engineering, Bihar)|बीसीईसीई (इंजीनियरिंग, बिहार)|A|I|BCECE Board Bihar|https://bceceboard.bihar.gov.in|eng-180
 gujcet|GUJCET (Gujarat)|गुजकेट (गुजरात)|A|I|GSEB Gujarat|https://gseb.org|eng-180
-rpmt|RPMT (Rajasthan Pre-Medical)|आरपीएमटी (राजस्थान प्री-मेडिकल)|A|I|RUHS Rajasthan|https://ruhs.ac.in|neet
+rpmt|Rajasthan NEET UG Counselling (RPMT legacy)|राजस्थान नीट यूजी काउंसलिंग (आरपीएमटी)|A|I|Rajasthan NEET UG Medical & Dental Admission/Counselling Board|https://medicaleducation.rajasthan.gov.in/me/#/home/dptHome|rajasthan-medical-counselling
 kiitee|KIITEE|केआईआईटीईई|A|I|KIIT Bhubaneswar|https://kiit.ac.in|eng-180
 ipu-cet|IPU CET (B.Tech, Delhi)|आईपीयू सीईटी (बी.टेक, दिल्ली)|A|I|GGSIPU Delhi|https://ipu.ac.in|ipu-cet
 amity-aeee|Amity AEEE|अमिटी एईईई|A|I|Amity University|https://amity.edu|aptitude-ug
@@ -151,7 +151,7 @@ tnpsc-g4|TNPSC Group IV|टीएनपीएससी ग्रुप IV|R|M|TN
 kerala-lp|Kerala PSC LD Clerk / Category Exams|केरल पीएससी एलडी क्लर्क|R|M|Kerala PSC|https://www.keralapsc.gov.in|kerala-psc
 upsc-cse|UPSC Civil Services (IAS / IPS / IFS)|यूपीएससी सिविल सेवा (आईएएस / आईपीएस / आईएफएस)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-prelims
 upsc-ifos|UPSC IFoS (Indian Forest Service)|यूपीएससी आईएफओएस (भारतीय वन सेवा)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-prelims
-upsc-ies|UPSC IES / ISS|यूपीएससी आईईएस / आईएसएस|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-ese
+upsc-ies|UPSC IES / ISS|यूपीएससी आईईएस / आईएसएस|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-ies-iss
 upsc-epfo|UPSC EPFO (EO / AO)|यूपीएससी ईपीएफओ (ईओ / एओ)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|cgl
 upsc-ese|UPSC ESE (Engineering Services)|यूपीएससी ईएसई (इंजीनियरिंग सेवाएँ)|P|G|Union Public Service Commission (UPSC)|https://upsc.gov.in|upsc-ese
 uppsc-pcs|UPPSC PCS (Uttar Pradesh)|यूपीपीएससी पीसीएस (उत्तर प्रदेश)|P|G|UPPSC Uttar Pradesh|https://uppsc.up.nic.in|state-pcs

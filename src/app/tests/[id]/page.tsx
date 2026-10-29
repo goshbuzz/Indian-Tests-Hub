@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { MOCK_SLOTS, alertsFor, mcqsFor, mockLevel, papersFor, prepPackFor, syllabusFor } from "@/data/coverage";
 import { subjectsFor } from "@/data/sections";
+import { filterPractice } from "@/data/practiceSearch";
+import { alertDateLabel } from "@/data/alertDates";
 import { JOBS } from "@/data/jobs";
 import { TESTS } from "@/data/tests";
-import { SUBJECT_HI } from "@/data/families";
+import { FAMILIES, SUBJECT_HI } from "@/data/families";
 import { dict } from "@/lib/i18n";
 import { useStore } from "@/lib/store";
 import { guidesFor } from "@/data/studyGuides";
@@ -18,6 +20,7 @@ const TABS = ["overview", "study", "syllabus", "papers", "mcq", "mock", "jobs", 
 
 export default function TestPage() {
   const { id } = useParams<{ id: string }>();
+  const router = useRouter();
   const test = TESTS.find((x) => x.id === id);
   const { lang, user, saved, toggleSave, syllabusDone, toggleTopic, suggest, jobFollow, toggleJobFollow, docsDone, toggleDoc } =
     useStore();
@@ -26,6 +29,7 @@ export default function TestPage() {
   const [tab, setTab] = useState<(typeof TABS)[number]>("overview");
   const [note, setNote] = useState("");
   const [filter, setFilter] = useState("");
+  const [shown, setShown] = useState(40);
   const [revealed, setRevealed] = useState<string | null>(null);
 
   const syl = useMemo(() => (test ? syllabusFor(test.id) : []), [test]);
@@ -46,11 +50,8 @@ export default function TestPage() {
     return g;
   }, [syl]);
 
-  const filteredMcq = mcqs.slice(0, 40).filter((m) => {
-    const f = filter.toLowerCase();
-    if (!f) return true;
-    return m.subject.toLowerCase().includes(f) || m.topic.toLowerCase().includes(f) || m.question_text.toLowerCase().includes(f);
-  });
+  const matchingMcq = filterPractice(mcqs, filter);
+  const filteredMcq = matchingMcq.slice(0, shown);
 
   if (!test) return <p>{t.testNotFound}</p>;
 
@@ -94,7 +95,7 @@ export default function TestPage() {
             <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold">{pct}%</span>
           </div>
           <button
-            onClick={() => (user ? toggleSave(test.id) : (window.location.href = "/login"))}
+            onClick={() => (user ? toggleSave(test.id) : router.push("/login"))}
             className={`rounded-full px-4 py-2 text-sm ${saved.includes(test.id) ? "bg-emerald-800 text-white" : "border bg-white"}`}
           >
             {saved.includes(test.id) ? t.savedBtn : t.save}
@@ -119,6 +120,14 @@ export default function TestPage() {
           <Row label={t.eligibility} value={test.eligibility} />
           <Row label={t.format} value={pattern} />
           <p className={`text-xs ${test.verified ? "text-emerald-800" : "text-amber-800"}`}>{verifiedNote}</p>
+          {FAMILIES[test.family]?.source && (
+            <p className="text-xs text-stone-600">
+              {hi ? "आधिकारिक स्रोत" : "Official source"}: {" "}
+              <a className="text-emerald-800 underline" href={FAMILIES[test.family].source!.url} target="_blank" rel="noreferrer">
+                {FAMILIES[test.family].source!.title}
+              </a>{" "}· {hi ? "जाँचा" : "checked"} {FAMILIES[test.family].source!.checkedAt}
+            </p>
+          )}
           <Row label={t.fee} value={test.fee_info} />
           <Row
             label={t.official}
@@ -194,6 +203,7 @@ export default function TestPage() {
       {tab === "papers" && (
         <div className="mt-4 grid gap-2 sm:grid-cols-2">
           <p className="sm:col-span-2 text-xs text-stone-500">{t.papersNote}</p>
+          {papers.length === 0 && <p className="sm:col-span-2 text-sm text-stone-600">{hi ? "इस परीक्षा के लिए जाँचा हुआ पेपर लिंक अभी उपलब्ध नहीं है।" : "No checked paper links are available for this exam yet."} <a className="text-emerald-800 underline" href={test.official_url} target="_blank" rel="noreferrer">{t.officialSource}</a></p>}
           {papers.map((p) => (
             <a key={p.id} href={p.file_url} target="_blank" rel="noreferrer" className="rounded-xl border bg-white p-4">
               <div className="font-medium">{t.officialSource}</div>
@@ -207,11 +217,12 @@ export default function TestPage() {
         <div className="mt-4 space-y-3">
           <input
             value={filter}
-            onChange={(e) => setFilter(e.target.value)}
+            onChange={(e) => { setFilter(e.target.value); setShown(40); }}
             placeholder={t.filterMcq}
             className="w-full rounded-xl border bg-white px-3 py-2 text-sm"
           />
           {filteredMcq.length === 0 && <p className="text-sm">{t.mcqEmpty}</p>}
+          {matchingMcq.length > 0 && <p className="text-xs text-stone-600">{hi ? "दिखाए गए" : "Showing"} {filteredMcq.length} / {matchingMcq.length}</p>}
           {filteredMcq.map((m) => (
             <div key={m.id} className="rounded-xl border bg-white p-4">
               <div className="text-xs text-stone-500">
@@ -233,6 +244,11 @@ export default function TestPage() {
               )}
             </div>
           ))}
+          {shown < matchingMcq.length && (
+            <button type="button" className="rounded-full border border-emerald-800 bg-white px-4 py-2 text-sm font-medium text-emerald-900" onClick={() => setShown((n) => n + 40)}>
+              {hi ? "और प्रश्न दिखाएँ" : "Show more questions"}
+            </button>
+          )}
         </div>
       )}
 
@@ -328,10 +344,11 @@ export default function TestPage() {
           {alerts.map((a) => (
             <li key={a.id} className="rounded-xl border bg-white p-3">
               <div className="text-xs text-stone-500">
-                {a.type} · {a.published_at.slice(0, 10)}
+                {a.type} · {alertDateLabel(a, hi)}
               </div>
               <div className="font-medium">{a.title}</div>
               <p className="text-sm">{a.body}</p>
+              <a className="mt-1 inline-block text-sm text-emerald-800 underline" href={a.source_url} target="_blank" rel="noreferrer">{hi ? "आधिकारिक सूचना" : "Official notice"}</a>
             </li>
           ))}
         </ul>
