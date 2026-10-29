@@ -22,6 +22,8 @@ export function InstallPrompt() {
     const isStand =
       window.matchMedia("(display-mode: standalone)").matches ||
       (navigator as Navigator & { standalone?: boolean }).standalone === true;
+    // Browser install state is unavailable during server rendering.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStandalone(!!isStand);
     if (isStand) return;
 

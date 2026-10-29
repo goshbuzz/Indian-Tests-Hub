@@ -37,9 +37,9 @@ function patternLine(f: Family, hi: boolean): string {
   const totalQ = f.sections.reduce((a, s) => a + s[1], 0);
   const totalM = f.sections.reduce((a, s) => a + s[2], 0);
   if (totalQ === 0) {
-    return hi
-      ? "साक्षात्कार आधारित चयन (कोई लिखित MCQ पेपर नहीं)"
-      : "Interview-based selection (no written MCQ paper)";
+    return f.note ?? (hi
+      ? "परीक्षा के प्रारूप के लिए आधिकारिक सूचना देखें।"
+      : "See the official notice for the examination format.");
   }
   const label = (s: string) => (hi ? SUBJECT_HI[s] ?? s : s);
   const head = hi
@@ -78,7 +78,7 @@ function parse(): Test[] {
         format_description: patternLine(f, false),
         format_hi: patternLine(f, true),
         fee_info: f.fee,
-        last_updated: "2026-10-29",
+        last_updated: f.source?.checkedAt ?? "2026-10-29",
         family,
         verified: f.verified,
         priority: PRIORITY.has(id) || undefined,

@@ -8,6 +8,8 @@ export function CookieBar() {
   const [show, setShow] = useState(false);
   useEffect(() => {
     try {
+      // Read browser-only storage after hydration.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShow(!localStorage.getItem(KEY));
     } catch {
       setShow(true);

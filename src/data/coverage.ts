@@ -4,6 +4,7 @@ import { ALERTS } from "./content";
 import { MCQ_BANK, bankSubjectFor } from "./mcqBank";
 import { familyOf, paperShape, slotCount, Slot } from "./mockShape";
 import { applyUrl } from "./applyUrls";
+import { officialPapersFor } from "./pastPapers";
 import type { Alert, MCQ, MockConfig, PastPaper, PrepPack, SyllabusItem } from "@/lib/types";
 
 export { paperShape } from "./mockShape";
@@ -64,21 +65,9 @@ export function mcqsFor(testId: string): MCQ[] {
   return MCQ_BANK.filter((m) => keys.has(m.subject)).map((m) => ({ ...m, test_id: testId, id: `${testId}-${m.id}` }));
 }
 
-/** Papers: the official site is the only verified source, so that is what we link to. */
+/** Only explicitly checked official paper links are presented as papers. */
 export function papersFor(testId: string): PastPaper[] {
-  const t = TEST_BY_ID[testId];
-  if (!t) return [];
-  return [
-    {
-      id: `${testId}-official`,
-      test_id: testId,
-      year: 2026,
-      conducting_body_variant: `${t.conducting_body} — previous-year papers, notices & syllabus`,
-      file_url: applyUrl(testId, t.official_url),
-      source: applyUrl(testId, t.official_url),
-      verified: true,
-    },
-  ];
+  return TEST_BY_ID[testId] ? officialPapersFor(testId) : [];
 }
 
 export const ALL_MOCKS: MockConfig[] = TESTS.map((t) => {

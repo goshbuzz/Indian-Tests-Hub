@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ALL_ALERTS } from "@/data/coverage";
+import { alertDateLabel, newestAlertFirst } from "@/data/alertDates";
 import { JOBS } from "@/data/jobs";
 import { CATEGORY_META, TESTS, tName } from "@/data/tests";
 import { dict } from "@/lib/i18n";
@@ -21,7 +22,7 @@ export default function StartPage() {
   const t = dict[lang];
   const savedTests = TESTS.filter((x) => saved.includes(x.id));
   const rec = TESTS.filter((x) => x.priority);
-  const feed = [...ALL_ALERTS].sort((a, b) => b.published_at.localeCompare(a.published_at)).slice(0, 5);
+  const feed = [...ALL_ALERTS].sort(newestAlertFirst).slice(0, 5);
 
   return (
     <div className="space-y-6">
@@ -127,7 +128,7 @@ export default function StartPage() {
             return (
               <li key={a.id} className="rounded-xl border border-stone-200 bg-white p-3">
                 <div className="text-xs text-stone-500">
-                  {tName(test, lang === "hi")} · {a.type} · {a.published_at.slice(0, 10)}
+                  {tName(test, lang === "hi")} · {a.type} · {alertDateLabel(a, lang === "hi")}
                 </div>
                 <div className="font-medium">{a.title}</div>
                 <p className="text-sm text-stone-600">{a.body}</p>

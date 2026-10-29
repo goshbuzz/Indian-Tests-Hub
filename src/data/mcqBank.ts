@@ -40,7 +40,7 @@ Indian History|Freedom|Jallianwala Bagh massacre happened in?|1919|1921|1914|193
 Indian History|Indus|Lothal, a Harappan site, is in which state?|Gujarat|Punjab|Haryana|Rajasthan|0|Lothal (Dholavira also Gujarat).
 Geography|Deserts|The largest hot desert in India by area is?|Thar|Great Rann of Kutch|Ladakh|Deccan|0|The Thar Desert in Rajasthan.
 Geography|Latitudes|The Tropic of Cancer passes through how many Indian states?|6|8|10|12|1|Passes through eight states, including Gujarat and Mizoram.
-Geography|Mountains|Highest peak entirely within India?|K2|Kangchenjunga|Nanda Devi|Anamudi|1|Kangchenjunga (Sikkim-Nepal border).
+Geography|Mountains|Which of these peaks lies entirely within India?|K2|Kangchenjunga|Nanda Devi|Mount Everest|2|Nanda Devi lies in Uttarakhand; Kangchenjunga is on the India–Nepal border.
 Geography|Lakes|Largest freshwater lake in India?|Wular|Chilika|Sambhar|Loktak|0|Wular Lake in Jammu & Kashmir.
 Geography|Straits|Strait separating India and Sri Lanka?|Palk Strait|Strait of Malacca|Bass Strait|Strait of Hormuz|0|Palk Strait lies between Tamil Nadu and Sri Lanka.
 Geography|Rivers|The state known as the land of five rivers is?|Punjab|Haryana|Gujarat|Kerala|0|Punjab means land of five waters.
@@ -59,9 +59,19 @@ General Science|Light|Speed of light in vacuum is about?|3 × 10^8 m/s|3 × 10^6
 General Science|Acids|pH of pure water at 25°C?|0|7|14|1|1|Neutral solution has pH 7.
 General Science|Cell|Powerhouse of the cell?|Nucleus|Mitochondria|Ribosome|Golgi body|1|Mitochondria produce ATP.
 General Science|Elements|Symbol Fe stands for?|Fluorine|Iron|Lead|Gold|1|Fe is from Latin ferrum.
-General Science|Blood|Universal blood donor group?|A|B|AB|O|3|O-negative is the universal donor.
+General Science|Blood|Which blood group is generally considered the universal red-cell donor in emergencies?|A positive|B positive|AB positive|O negative|3|O-negative red cells lack A, B and Rh D antigens; compatibility testing remains important.
 General Science|Minerals|Hardest natural substance?|Quartz|Diamond|Graphite|Ruby|1|Diamond scores 10 on Mohs scale.
 General Science|Electricity|SI unit of electric current?|Volt|Ampere|Ohm|Watt|1|Current is measured in amperes.
+Physics|Kinematics|A car travels 120 m in 10 s at constant speed. What is its speed?|12 m/s|10 m/s|1200 m/s|1.2 m/s|0|Speed equals distance divided by time: 120 ÷ 10 = 12 m/s.
+Physics|Kinematics|A body starts from rest and accelerates uniformly at 2 m/s² for 5 s. What is its final speed?|10 m/s|2.5 m/s|7 m/s|25 m/s|0|Using v = u + at gives 0 + 2 × 5 = 10 m/s.
+Physics|Mechanics|If the net force on a body is zero, its acceleration is?|Zero|Always increasing|Equal to its speed|Equal to its mass|0|Newton's second law gives acceleration zero when net force is zero.
+Physics|Momentum|A 2 kg object moves at 3 m/s. What is its momentum?|6 kg m/s|1.5 kg m/s|5 kg m/s|9 kg m/s|0|Momentum is mass times velocity: 2 × 3 = 6 kg m/s.
+Physics|Work|A constant 5 N force moves an object 4 m in the direction of the force. What work is done?|20 J|9 J|1.25 J|40 J|0|Work is force times displacement in its direction: 5 × 4 = 20 J.
+Physics|Electricity|Two 6 Ω resistors are connected in series. What is their equivalent resistance?|12 Ω|3 Ω|6 Ω|36 Ω|0|Series resistances add: 6 + 6 = 12 Ω.
+Physics|Electricity|Two 6 Ω resistors are connected in parallel. What is their equivalent resistance?|3 Ω|12 Ω|6 Ω|36 Ω|0|Two equal resistances in parallel have half the individual resistance.
+Physics|Waves|A wave has frequency 5 Hz and wavelength 2 m. What is its speed?|10 m/s|2.5 m/s|7 m/s|0.4 m/s|0|Wave speed is frequency times wavelength: 5 × 2 = 10 m/s.
+Physics|Optics|A light ray travelling from air into glass bends towards the normal because its speed?|Decreases|Increases|Becomes infinite|Remains unchanged|0|Light travels more slowly in glass than in air.
+Physics|Heat|The SI unit of temperature is?|Kelvin|Celsius degree|Joule|Calorie|0|Kelvin is the SI base unit of thermodynamic temperature.
 Physics|Mechanics|Newton's second law states F = ?|ma|mv|m/a|ma²|0|Force equals mass times acceleration.
 Physics|Dimensions|Dimensional formula of force?|MLT⁻²|ML²T⁻²|MLT⁻¹|ML²T⁻¹|0|F = ma, so MLT⁻².
 Physics|Units|SI unit of power?|Joule|Watt|Newton|Pascal|1|Power = work/time, measured in watts.
@@ -72,6 +82,16 @@ Physics|Energy|Kinetic energy formula?|½mv²|mv|mgh|ma|0|KE = ½ mv².
 Physics|Gravitation|Approx escape velocity from Earth?|11.2 km/s|7.9 km/s|3 km/s|25 km/s|0|About 11.2 km/s.
 Physics|Atoms|Which particle has no charge?|Electron|Proton|Neutron|Positron|2|Neutrons are electrically neutral.
 Physics|Magnetism|SI unit of magnetic flux?|Tesla|Weber|Henry|Gauss|1|Flux is measured in weber.
+Chemistry|Atomic structure|An atom has 11 protons. What is its atomic number?|11|22|10|12|0|Atomic number equals the number of protons.
+Chemistry|Mole|How many moles are in 18 g of water? Use molar mass 18 g/mol.|1 mol|2 mol|18 mol|0.5 mol|0|Amount in moles is mass divided by molar mass: 18 ÷ 18 = 1.
+Chemistry|Bonding|What type of bond forms by transfer of electrons between atoms?|Ionic bond|Covalent bond|Hydrogen bond|Metallic bond|0|Electron transfer produces oppositely charged ions held by electrostatic attraction.
+Chemistry|Bonding|A covalent bond primarily involves?|Sharing electron pairs|Transfer of neutrons|Sharing protons|Loss of the nucleus|0|A covalent bond involves one or more shared electron pairs.
+Chemistry|Periodic table|Elements in the same group of the periodic table generally have the same number of?|Valence electrons|Neutrons|Electron shells|Nucleons|0|Main-group elements in a group generally have the same number of valence electrons.
+Chemistry|Acids and bases|A solution with pH 3 at 25°C is?|Acidic|Neutral|Basic|Always a salt solution|0|At 25°C a pH below 7 indicates an acidic aqueous solution.
+Chemistry|Redox|Reduction is defined as?|Gain of electrons|Loss of electrons|Gain of protons only|Loss of neutrons|0|Reduction is the gain of electrons.
+Chemistry|States of matter|At constant temperature, if the volume of an ideal gas is halved, its pressure becomes?|Twice as large|Half as large|Four times as large|Unchanged|0|Boyle's law gives pressure inversely proportional to volume at constant temperature.
+Chemistry|Solutions|A solution contains 5 g solute in 100 g solution. What is its mass percentage?|5%|10%|20%|95%|0|Mass percentage is 5 ÷ 100 × 100 = 5%.
+Chemistry|Organic|What is the functional group of an alcohol?|Hydroxyl (−OH)|Carboxyl (−COOH)|Aldehyde (−CHO)|Amino (−NH2)|0|Alcohols contain a hydroxyl group bonded to carbon.
 Chemistry|Atomic structure|Atomic number of carbon?|6|12|8|14|0|Carbon has 6 protons.
 Chemistry|Elements|Symbol Ne stands for?|Neon|Nickel|Nitrogen|Sodium|0|Ne is neon.
 Chemistry|Mole|Avogadro's number is?|6.022 × 10²³|3.14|9.8|1.6 × 10⁻¹⁹|0|Number of particles in one mole.
@@ -90,11 +110,31 @@ Mathematics|Probability|Probability of head in one fair coin toss?|1/2|1/4|1|1/3
 Mathematics|Geometry|Sum of angles in a triangle?|180°|360°|90°|270°|0|Interior angles total 180°.
 Mathematics|Number theory|HCF of 12 and 18?|6|3|12|36|0|Common factors 1, 2, 3, 6.
 Biology|Photosynthesis|Site of photosynthesis in a plant cell?|Mitochondria|Chloroplast|Nucleus|Ribosome|1|Chloroplasts contain chlorophyll.
+Botany|Transport|Which tissue transports water and mineral ions from roots towards leaves?|Xylem|Phloem|Epidermis|Cork|0|Xylem conducts water and dissolved minerals through the plant.
+Botany|Transport|Which tissue transports sugars from source to sink in plants?|Phloem|Xylem|Cortex|Epidermis|0|Phloem carries organic nutrients such as sucrose.
+Botany|Cells|The primary component of a plant cell wall is?|Cellulose|Chitin|Peptidoglycan|Glycogen|0|Cellulose is a major structural component of plant cell walls.
+Botany|Photosynthesis|Which gas is released during oxygenic photosynthesis?|Oxygen|Nitrogen|Methane|Sulphur dioxide|0|Oxygen is released when water is split during the light reactions.
+Botany|Photosynthesis|The Calvin cycle takes place in which part of the chloroplast?|Stroma|Thylakoid lumen|Outer membrane|Intermembrane space|0|The enzymes of the Calvin cycle are located in the stroma.
+Botany|Reproduction|Which floral structure produces pollen grains?|Anther|Stigma|Ovary|Sepal|0|Pollen grains develop in the anther.
+Botany|Reproduction|After fertilisation in a flowering plant, an ovule typically develops into a?|Seed|Fruit wall|Stamen|Petal|0|The fertilised ovule develops into a seed.
+Botany|Plant physiology|Which plant hormone is associated with stomatal closure during water stress?|Abscisic acid|Auxin|Cytokinin|Gibberellin|0|Abscisic acid promotes stomatal closure under water stress.
+Botany|Plant physiology|Loss of water vapour from aerial plant parts is called?|Transpiration|Translocation|Fertilisation|Germination|0|Transpiration is the loss of water as vapour from aerial parts.
+Botany|Cells|Where are most chlorophyll molecules located within chloroplasts?|Thylakoid membranes|Stroma|Outer membrane|Cell wall|0|Photosynthetic pigments are embedded in thylakoid membranes.
 Botany|Plant pigments|Main pigment absorbing light for photosynthesis?|Chlorophyll-a|Haemoglobin|Melanin|Keratin|0|Chlorophyll-a is the primary photosynthetic pigment.
 Botany|Kingdoms|Mushrooms belong to which kingdom?|Plantae|Fungi|Protista|Monera|1|Fungi are heterotrophic eukaryotes.
 Botany|Genetics|Father of genetics?|Darwin|Mendel|Lamarck|Watson|1|Gregor Mendel's pea experiments.
-Botany|Anatomy|Stomata are found mainly on?|Upper leaf surface|Lower leaf surface|Stem only|Roots only|1|Most stomata lie on the lower epidermis.
+Botany|Anatomy|In a typical terrestrial dicot leaf, stomata are usually more numerous on which surface?|Upper leaf surface|Lower leaf surface|Stem only|Roots only|1|In many terrestrial dicot leaves, the lower epidermis has more stomata.
 Botany|Hormones|Hormone that promotes stem elongation?|Ethylene|Gibberellin|Abscisic acid|Cytokinin|1|Gibberellins promote stem growth.
+Zoology|Circulation|Which blood vessel carries oxygenated blood from the lungs to the heart?|Pulmonary vein|Pulmonary artery|Vena cava|Hepatic portal vein|0|Pulmonary veins return oxygenated blood to the left atrium.
+Zoology|Circulation|Which chamber pumps blood into the systemic circulation?|Left ventricle|Right ventricle|Left atrium|Right atrium|0|The left ventricle pumps blood into the aorta.
+Zoology|Respiration|Gas exchange in the human lungs occurs primarily in the?|Alveoli|Trachea|Bronchi|Larynx|0|Alveoli provide thin surfaces for oxygen and carbon dioxide exchange.
+Zoology|Excretion|The functional unit of the human kidney is the?|Nephron|Neuron|Alveolus|Villus|0|Nephrons filter blood and form urine.
+Zoology|Nervous system|The junction between two neurons is called a?|Synapse|Nephron|Sarcomere|Alveolus|0|A synapse is a junction where signals pass between neurons or to an effector.
+Zoology|Digestion|Which enzyme in saliva begins starch digestion?|Salivary amylase|Pepsin|Trypsin|Lipase from the pancreas|0|Salivary amylase begins breaking down starch.
+Zoology|Immunity|Antibodies are produced by which cells?|Plasma cells|Red blood cells|Platelets|Neurons|0|Plasma cells derived from B lymphocytes secrete antibodies.
+Zoology|Genetics|Which molecule carries hereditary information in most organisms?|DNA|Starch|Cellulose|Triglyceride|0|DNA carries hereditary information in most organisms.
+Zoology|Endocrine|Which gland secretes thyroxine?|Thyroid|Pituitary|Pancreas|Adrenal medulla|0|Thyroxine is a thyroid hormone.
+Zoology|Cells|Which process produces two genetically similar daughter cells in ordinary somatic cell division?|Mitosis|Meiosis I|Fertilisation|Crossing over|0|Mitosis normally produces two genetically similar daughter cells.
 Zoology|Glands|Largest gland in the human body?|Liver|Pancreas|Thyroid|Adrenal|0|The liver is the largest internal gland.
 Zoology|Hormones|Hormone that lowers blood glucose?|Insulin|Thyroxine|Adrenaline|Oxytocin|0|Produced by beta cells of islets of Langerhans.
 Zoology|Heart|Number of chambers in the human heart?|4|3|2|5|0|Two atria and two ventricles.
@@ -353,9 +393,11 @@ function reasoningItems(): Raw[] {
   for (let i = 0; i < 6; i++) {
     const a = 3 * (1 + Math.floor(r() * 4));
     const b = 4 * (1 + Math.floor(r() * 3));
-    const dist = Math.hypot(a, b);
-    const sh = shuffleOpts(r, `${dist} km`, [`${a + b} km`, `${Math.abs(b - a)} km`, `${a * b} km`]);
-    out.push({ subject: R, topic: "Direction sense", q: `A man walks ${a} km north, then ${b} km east. How far is he from the starting point?`, opts: sh.opts, ans: sh.ans, expl: `Right-angle distance: √(${a}² + ${b}²) = ${dist} km.`, diff: "medium" });
+    const squared = a * a + b * b;
+    const dist = Math.sqrt(squared);
+    const exact = Number.isInteger(dist) ? String(dist) : `√${squared}`;
+    const sh = shuffleOpts(r, `${exact} km`, [`${a + b} km`, `${Math.abs(b - a)} km`, `${a * b} km`]);
+    out.push({ subject: R, topic: "Direction sense", q: `A man walks ${a} km north, then ${b} km east. How far is he from the starting point?`, opts: sh.opts, ans: sh.ans, expl: `Right-angle distance: √(${a}² + ${b}²) = ${exact} km.`, diff: "medium" });
   }
   const odd: [string[], string][] = [
     [["4", "9", "16", "20"], "20"], [["2", "3", "5", "9"], "9"], [["8", "27", "64", "100"], "100"],
@@ -407,7 +449,8 @@ function parseHand(): Raw[] {
 const ALL_RAW: Raw[] = [...parseHand(), ...quantItems(), ...reasoningItems(), ...vocabItems()];
 
 /** Full bank, test-agnostic. Each item has test_id "bank" and is re-tagged per test in coverage.ts. */
-export const MCQ_BANK: MCQ[] = ALL_RAW.map((x, i) => ({
+const seenQuestionTexts = new Set<string>();
+export const MCQ_BANK: MCQ[] = ALL_RAW.map<MCQ>((x, i) => ({
   id: `bank-${i}`,
   test_id: "bank",
   subject: x.subject,
@@ -419,7 +462,13 @@ export const MCQ_BANK: MCQ[] = ALL_RAW.map((x, i) => ({
   difficulty: x.diff,
   source: "ai_generated",
   kind: "mcq",
-}));
+})).filter((item) => {
+  // Preserve the original ID of the first occurrence, so stored progress is stable.
+  const key = item.question_text.trim().toLowerCase();
+  if (seenQuestionTexts.has(key)) return false;
+  seenQuestionTexts.add(key);
+  return true;
+});
 
 /**
  * Map a pattern section subject onto a bank subject. The bank only holds
@@ -432,8 +481,10 @@ export function bankSubjectFor(section: string): string[] {
   if (/^engineering subject/.test(s) || s === "subject paper" || s === "subject knowledge" || s === "part b & c (subject)") return [];
   if (["listening", "reading", "writing", "speaking", "speaking & writing"].includes(s)) return [];
   if (["general aptitude", "aptitude", "part a (general)", "general studies paper ii (csat)", "csat paper ii"].includes(s)) return ["Quantitative Aptitude", "Reasoning", "English"];
+  if (s === "general aptitude test") return ["Quantitative Aptitude", "Reasoning", "Data Interpretation", "General Awareness", "Indian Polity", "Indian History", "Geography", "Economy", "General Science"];
   if (s === "general ability test" || s === "general test") return ["Quantitative Aptitude", "Reasoning", "English", "General Awareness", "Indian Polity", "Indian History", "Geography", "Economy", "General Science"];
   if (s === "indian & global environment") return ["General Awareness"];
+  if (s === "economic & business environment") return ["Economy", "General Awareness"];
   if (s === "data analysis & sufficiency" || s === "data insights") return ["Data Interpretation", "Quantitative Aptitude", "Reasoning"];
   if (s === "logical reasoning" || s === "data interpretation & logical reasoning") return ["Reasoning", "Data Interpretation"];
   if (s === "physics & chemistry") return ["Physics", "Chemistry"];

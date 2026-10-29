@@ -21,11 +21,6 @@ function add(msg: string) {
   issues.push(msg);
 }
 
-const FORBIDDEN: Record<string, string[]> = {
-  International: ["pakistan studies", "islamiat", "biology", "banking gk", "gk"],
-  Admissions: ["german", "ielts"],
-};
-
 for (const t of TESTS) {
   const allowed = subjectsFor(t.id, t.category).flatMap((x) => bankSubjectFor(x));
   const bank = ALL_MCQS.filter((m) => m.test_id === t.id);

@@ -10,7 +10,7 @@ import { PageFaq } from "@/components/PageFaq";
 import { PAGE_FAQS } from "@/data/pageFaqs";
 
 export default function JobsPage() {
-  const { lang, saved, jobFollow, lastSync, markSynced } = useStore();
+  const { lang, saved, jobFollow } = useStore();
   const t = dict[lang];
   const prefs = new Set([...saved, ...jobFollow]);
   const mine = JOBS.filter((j) => prefs.size === 0 || prefs.has(j.test_id));
@@ -22,21 +22,14 @@ export default function JobsPage() {
         <div>
           <h1 className="text-2xl font-semibold">{t.jobs}</h1>
           <p className="text-sm text-stone-500">
-            Synced from official conducting-body URLs. Last sync: {lastSync ? lastSync.slice(0, 16).replace("T", " ") : "not yet"}
+            Manually curated notices; this list is not automatically synced. Always check the official notice.
           </p>
         </div>
-        <button
-          onClick={() => {
-            markSynced();
-          }}
-          className="rounded-full bg-emerald-800 px-4 py-2 text-sm text-white"
-        >
-          {t.sync}
-        </button>
       </div>
       <p className="mt-2 text-xs text-stone-500">
-        Showing {prefs.size ? "followed / saved tests" : "all synced ads"}. Save a test or tap Follow on its Jobs tab.
+        Showing {prefs.size ? "followed / saved tests where available" : "all checked listings"}. Save a test or tap Follow on its Jobs tab.
       </p>
+      {list.length === 0 && <p className="mt-4 text-sm text-stone-600">No verified recruitment listings are available yet. Check the conducting body’s official site for current notices.</p>}
       <ul className="mt-4 space-y-3">
         {list.map((j, i) => {
           const test = TESTS.find((x) => x.id === j.test_id);

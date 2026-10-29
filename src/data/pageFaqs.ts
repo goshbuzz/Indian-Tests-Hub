@@ -11,13 +11,13 @@ export const PAGE_FAQS: Record<string, Faq[]> = {
     { q: "Can I read the page in Hindi?", a: "Yes. Switch the language in Profile to Hindi (हिंदी) and category, test names and patterns switch with it." },
   ],
   jobs: [
-    { q: "Where does the job list come from?", a: "The jobs shown are taken from public recruitment listings. Each item links to the conducting body's site. Confirm the notice on that site before you apply." },
+    { q: "Where does the job list come from?", a: "Listings are curated manually and are not automatically synced. Confirm each opening, deadline and eligibility in the conducting body's official notice before applying." },
     { q: "Do you charge for applications?", a: "No. Application fees are paid only to the official body. Indian Tests Hub never takes money for an application." },
     { q: "Why is a listing missing?", a: "Listings are added after checking the official notice. A missing post usually means it has not been verified yet." },
   ],
   alerts: [
     { q: "What do alerts cover?", a: "Alerts cover new notifications, exam date announcements and results for the tests you follow. Each alert links to its official source." },
-    { q: "Do alerts work offline?", a: "Alerts are shown from data stored on your device. Turn on notifications in Profile to get reminders on this browser." },
+    { q: "Do alerts update automatically?", a: "No. Alerts are manually curated with links to their sources. Visit the conducting body's official site for the latest notices." },
   ],
   about: [
     { q: "Who runs Indian Tests Hub?", a: "It is an independent study project. It is not affiliated with any exam body, and it is not an official government website." },

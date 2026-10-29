@@ -3,8 +3,8 @@
  * official section-wise pattern (questions, marks, time, negative marking), default
  * eligibility/fee text and the syllabus topics for each subject.
  *
- * `verified: false` marks a pattern taken from the last published notice we could
- * check but not re-confirmed against the current cycle. The UI says so.
+ * A pattern is marked verified only when the catalogue flag is set and a specific
+ * official source is recorded. Unsourced or approximate patterns are labelled accordingly.
  */
 
 export type Section = [subject: string, questions: number, marks: number];
@@ -21,6 +21,8 @@ export type Family = {
   verified: boolean;
   /** Optional extra line (English) shown under the pattern. */
   note?: string;
+  /** Specific official source and cycle for patterns checked against a notice. */
+  source?: { title: string; url: string; cycle: string; checkedAt: string };
 };
 
 const N0 = { neg: "No negative marking", neg_hi: "कोई ऋणात्मक अंकन नहीं" };
@@ -40,21 +42,28 @@ function fam(
   fee: string,
   verified: boolean,
   note?: string,
+  source?: Family["source"],
 ): [string, Family] {
-  return [key, { label, minutes, neg: n.neg, neg_hi: n.neg_hi, sections, elig, fee, verified, note }];
+  return [key, { label, minutes, neg: n.neg, neg_hi: n.neg_hi, sections, elig, fee, verified: verified && Boolean(source), note, source }];
 }
 
 
 export const FAMILIES: Record<string, Family> = Object.fromEntries([
   // ───── Undergraduate entrance ─────
   fam("neet", "NEET UG", 180, N1, [
-    ["Physics", 45, 180], ["Chemistry", 45, 180], ["Botany", 45, 180], ["Zoology", 45, 180],
+    ["Physics", 45, 180], ["Chemistry", 45, 180], ["Biology", 90, 360],
   ], "Class 12 with Physics, Chemistry, Biology/Biotechnology; NTA age and aggregate rules apply.",
-  "₹1,700 general (approx.) — see NTA bulletin", true, "Correct +4 · wrong −1 · unattempted 0."),
+  "See the NTA bulletin for current category fees", true, "2026: 180 compulsory questions; Biology includes Botany and Zoology, without an official fixed 45/45 split. Correct +4 · wrong −1 · unattempted 0. Check the latest bulletin for future cycles.",
+  { title: "NTA NEET (UG) 2026 information bulletin, examination pattern", url: "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/02/202602081576322299.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
+  fam("rajasthan-medical-counselling", "Rajasthan NEET UG counselling", 0, N0, [],
+  "See the Rajasthan counselling information bulletin for NEET eligibility, domicile and category requirements.",
+  "See the current Rajasthan counselling notice", false, "Rajasthan's 2026 MBBS/BDS admissions notice concerns NEET UG counselling, not a separate mock examination. No representative mock is available here; use the NEET UG page for practice.",
+  { title: "Rajasthan NEET UG Medical & Dental Counselling 2026 round-one notice", url: "https://jankalyanfile.rajasthan.gov.in/WebMyWayFiles/Advertisement/Achievements/2026/Aug/36644_ACH_3f989085-5991-4cf1-84e6-3b0f9fd678f2.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("jee-main-1", "JEE Main Paper 1 (B.E./B.Tech)", 180, N1, [
-    ["Mathematics", 30, 100], ["Physics", 30, 100], ["Chemistry", 30, 100],
-  ], "Class 12 with PCM and the aggregate required by the NTA bulletin.",
-  "₹1,000–2,000 per paper (approx.)", true, "Section B numerical questions: +4, no negative. Attempt any 5 of 10 numerical per subject."),
+    ["Mathematics", 25, 100], ["Physics", 25, 100], ["Chemistry", 25, 100],
+  ], "Class 12 qualification and year-of-passing rules apply; check the NTA bulletin and institute requirements.",
+  "See the NTA bulletin for category and session fees", true, "2027 Paper 1: each subject has 20 MCQs and 5 numerical questions; +4 for correct and −1 for incorrect answers in both sections. Practice mocks use MCQs only, not numerical entry.",
+  { title: "NTA JEE (Main) 2027 information bulletin, sections 2.3–2.5", url: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/10/202610241890224107.pdf", cycle: "2027", checkedAt: "2026-10-30" }),
   fam("jee-main-2", "JEE Main Paper 2 (B.Arch / B.Planning)", 180, N1, [
     ["Mathematics", 25, 100], ["Aptitude (Architecture)", 50, 200], ["Drawing", 2, 100],
   ], "Class 12 with Mathematics; B.Arch needs NATA/JEE-B.Arch eligibility as notified.",
@@ -63,10 +72,11 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
     ["Mathematics", 18, 60], ["Physics", 18, 60], ["Chemistry", 18, 60],
   ], "Top 2.5 lakh JEE Main qualifiers plus age and category rules per IIT JAB.",
   "₹2,800 (general, per the IIT JAB notice)", false, "Two papers of 3 hours each, 180 marks per paper. Question counts per paper differ across sources (about 48–54); confirm in the IIT JAB brochure."),
-  fam("cuet-ug", "CUET (UG) per subject", 60, N1, [
-    ["Language", 40, 200], ["Domain Subject", 40, 200], ["General Test", 60, 200],
-  ], "Class 12 (or appearing); university-wise CUET subject requirements apply.",
-  "₹750 general (approx.)", false, "CUET UG is computer-based in multiple shifts. Counts shown are indicative; confirm in the NTA bulletin."),
+  fam("cuet-ug", "CUET (UG) General Aptitude Test", 60, N1, [
+    ["General Aptitude Test", 50, 250],
+  ], "Class 12 passed or appearing; university and programme-specific requirements apply.",
+  "See the NTA bulletin for category and subject-count fees", true, "2026: each selected subject is a separate 50-question paper lasting 60 minutes; +5 per correct answer and −1 per wrong answer. This practice paper covers the General Aptitude Test only, not language or domain papers. Check the latest bulletin for later cycles.",
+  { title: "NTA CUET (UG) 2026 information bulletin, section 2.3", url: "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601031633478370.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("cuet-pg", "CUET (PG) per subject", 90, N1, [
     ["Domain Subject", 75, 300],
   ], "Bachelor's degree (or appearing) in the relevant subject as per university rules.",
@@ -124,7 +134,8 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   fam("jipmat", "JIPMAT", 150, N1, [
     ["Quantitative Aptitude", 33, 132], ["Logical Reasoning", 33, 132], ["Verbal Ability", 34, 136],
   ], "Class 12 or appearing; institute-specific eligibility applies. Check the NTA bulletin.",
-  "See the current NTA bulletin", true, "2026: +4 per correct answer; −1 per incorrect answer. Logical reasoning includes data interpretation; verbal ability includes reading comprehension. Check the latest bulletin for future cycles."),
+  "See the current NTA bulletin", true, "2026: +4 per correct answer; −1 per incorrect answer. Logical reasoning includes data interpretation; verbal ability includes reading comprehension. Check the latest bulletin for future cycles.",
+  { title: "NTA JIPMAT 2026 information bulletin, sections 2.3–2.6", url: "https://cdnbbsr.s3waas.gov.in/s388a839f2f6f1427879fc33ee4acf4f66/uploads/2026/04/20260416666062493.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("clat-ug", "CLAT (UG 5-year LLB)", 120, N025, [
     ["English", 24, 24], ["General Knowledge & Current Affairs", 30, 30], ["Legal Reasoning", 30, 30], ["Logical Reasoning", 24, 24], ["Quantitative Techniques", 12, 12],
   ], "Class 12 with 45% (40% reserved) or as the Consortium notice states.",
@@ -150,15 +161,16 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   fam("cat", "CAT (IIM entrance)", 120, { neg: "−1 per wrong MCQ; no negative for TITA", neg_hi: "गलत MCQ पर −1; TITA पर कोई ऋणात्मक अंक नहीं" }, [
     ["Verbal Ability & Reading Comprehension", 24, 72], ["Data Interpretation & Logical Reasoning", 22, 66], ["Quantitative Aptitude", 22, 66],
   ], "Bachelor's degree (50% or as notified) for the IIM cycle.",
-  "₹2,300 general (approx.)", true, "68 questions, 204 marks, 120 minutes (CAT 2026). Three sections with 40-minute sectional limits. +3 per correct."),
+  "Check the current CAT notice for fees", false, "Illustrative counts based on recent papers; the 2026 section counts have not been confirmed from an official source. CAT includes non-MCQ questions. The current practice uses MCQs only and does not enforce sectional timing."),
   fam("xat", "XAT (XLRI)", 180, N025, [
     ["Verbal & Logical Ability", 30, 30], ["Decision Making", 30, 30], ["Quantitative Ability", 30, 30], ["General Knowledge", 30, 30],
   ], "Bachelor's degree as per XAT notice.",
   "₹2,200 (approx.)", false, "Confirm section counts in the XAT notice."),
-  fam("mat", "MAT (AIMA)", 150, N025, [
-    ["Language Comprehension", 40, 40], ["Mathematical Skills", 40, 40], ["Data Analysis & Sufficiency", 40, 40], ["Intelligence & Critical Reasoning", 40, 40], ["Indian & Global Environment", 40, 40],
-  ], "Bachelor's degree (any stream) for MBA admissions.",
-  "₹1,500 (approx.)", true, "200 MCQs in 150 minutes, 5 sections of 40 each."),
+  fam("mat", "MAT (AIMA)", 120, N025, [
+    ["Language Comprehension", 30, 0], ["Intelligence & Critical Reasoning", 30, 0], ["Mathematical Skills", 30, 0], ["Data Analysis & Sufficiency", 30, 0], ["Economic & Business Environment", 30, 0],
+  ], "Graduation in any discipline or final-year student, subject to institute admission requirements.",
+  "See AIMA for current mode-specific fees", true, "AIMA's December 2026 page lists 150 MCQs across five sections of 30, in 120 minutes, with −0.25 for each incorrect answer. Practice reports correct answers, not an official scaled MAT score.",
+  { title: "AIMA: information for MAT December 2026", url: "https://www.aima.in/content/testing-and-assessment/mat/mat", cycle: "December 2026", checkedAt: "2026-10-30" }),
   fam("cmat", "CMAT (AICTE)", 180, N1, [
     ["Quantitative Techniques & Data Interpretation", 20, 80], ["Logical Reasoning", 20, 80], ["Language Comprehension", 20, 80], ["General Awareness", 20, 80], ["Innovation & Entrepreneurship", 20, 80],
   ], "Bachelor's degree (50%) for management courses as per AICTE rules.",
@@ -222,7 +234,8 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   fam("ssc-selection-post", "SSC Selection Posts (CBE)", 60, N050, [
     ["General Intelligence & Reasoning", 25, 50], ["General Awareness", 25, 50], ["Quantitative Aptitude", 25, 50], ["English Language", 25, 50],
   ], "Eligibility varies by post and examination level; check the current SSC notice.",
-  "See the current SSC notice", true, "2026 notice: four 15-minute sections; separate CBE levels for matriculation, higher secondary and graduation posts."),
+  "See the current SSC notice", true, "2026 notice: four 15-minute sections; separate CBE levels for matriculation, higher secondary and graduation posts.",
+  { title: "SSC Phase-XIV/2026 Selection Posts notice, sections 15.1–15.2", url: "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_RHQ_2026_phase_xiv.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("cgl", "SSC CGL Tier 1", 60, N050, [
     ["General Intelligence & Reasoning", 25, 50], ["General Awareness", 25, 50], ["Quantitative Aptitude", 25, 50], ["English Comprehension", 25, 50],
   ], "Bachelor's degree from a recognised university; age and nationality rules per SSC notice.",
@@ -341,6 +354,11 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   "₹100 (approx.)", false, "Confirm the current DRDO notice."),
 
   // ───── Public service (PSC / Civil services) ─────
+  // UPSC IES/ISS has separate, largely descriptive papers; it is not the Engineering Services exam.
+  fam("upsc-ies-iss", "UPSC Indian Economic / Statistical Service", 0, N0, [],
+  "IES requires a postgraduate degree in an eligible economics discipline; ISS requires an eligible statistics degree. See the UPSC notice for full criteria.",
+  "See the UPSC notice", false, "2026: six written papers for each service (1,000 marks total), followed by a 200-mark interview. IES papers are descriptive; ISS includes objective and descriptive statistics papers. No representative mock is available yet.",
+  { title: "UPSC IES/ISS 2026 notice, examination plan", url: "https://www.upsc.gov.in/sites/default/files/Exam_Notification_IES_ISS_Eng_11022026.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("upsc-prelims", "UPSC Civil Services (Prelims)", 240, N033, [
     ["General Studies Paper I", 100, 200], ["CSAT Paper II", 80, 200],
   ], "Bachelor's degree (or appearing); age and attempt rules per UPSC notice.",
@@ -517,6 +535,7 @@ export const SUBJECT_HI: Record<string, string> = {
   "General Ability & Intelligence": "सामान्य योग्यता व बुद्धिमत्ता",
   "General Ability Test": "सामान्य योग्यता परीक्षा",
   "General Aptitude": "सामान्य अभियोग्यता",
+  "General Aptitude Test": "सामान्य अभियोग्यता परीक्षा",
   "Aptitude & Mental Ability": "अभियोग्यता व मानसिक योग्यता",
   "Mental Ability": "मानसिक योग्यता",
   "Aptitude (Architecture)": "वास्तु अभिरुचि",
@@ -549,6 +568,7 @@ export const SUBJECT_HI: Record<string, string> = {
   "Language II": "भाषा II",
   "Intelligence & Critical Reasoning": "बुद्धिमत्ता व आलोचनात्मक तर्क",
   "Indian & Global Environment": "भारतीय व वैश्विक परिवेश",
+  "Economic & Business Environment": "आर्थिक एवं कारोबारी परिवेश",
   "Mathematics": "गणित",
   "Elementary Mathematics": "प्रारंभिक गणित",
   "Mathematics (MCQ)": "गणित (MCQ)",
@@ -705,6 +725,7 @@ export const SYLLABUS: Record<string, string> = {
   "General Ability & Intelligence": "Reasoning:तर्क;Numerical:संख्यात्मक;General awareness:सामान्य जागरूकता",
   "General Ability Test": "English:अंग्रेज़ी;General knowledge:सामान्य ज्ञान;Physics & Chemistry:भौतिकी व रसायन;Maths basics:गणित मूल बातें;Biology:जीव विज्ञान",
   "General Aptitude": "Logical reasoning:तार्किक तर्क;Numerical ability:संख्यात्मक योग्यता;Verbal reasoning:मौखिक तर्क;Data interpretation:डेटा विश्लेषण;Teaching & research aptitude:शिक्षण व शोध अभियोग्यता",
+  "General Aptitude Test": "General knowledge and current affairs:सामान्य ज्ञान और समसामयिकी;General mental ability:सामान्य मानसिक योग्यता;Numerical ability:संख्यात्मक योग्यता;Quantitative reasoning:मात्रात्मक तर्क;Logical and analytical reasoning:तार्किक और विश्लेषणात्मक तर्क",
   "Mental Ability": "Reasoning:तर्क;Puzzles:पहेली;Series:श्रृंखला",
   "Aptitude & Mental Ability": "Reasoning:तर्क;Numerical:संख्यात्मक;Mental ability:मानसिक योग्यता",
   "Aptitude": "Logical reasoning:तार्किक तर्क;Numerical:संख्यात्मक;Verbal:मौखिक",
