@@ -1,0 +1,8 @@
+/* TEAM */
+Product: Indian Tests Hub
+Status: Independent study project. Not affiliated with any exam body.
+Product URL: see NEXT_PUBLIC_SITE_URL (set in your deployment)
+
+/* NOTES */
+Exam patterns are taken from official notices and public exam pages; approximate patterns are labelled on each test page.
+Hindi translation: UI, test names, patterns and syllabus topics. Practice MCQs remain in English.

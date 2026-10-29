@@ -1,0 +1,12 @@
+# Indian Tests Hub
+
+> Free, independent self-study hub for Indian competitive and entrance exams: NEET, JEE, CUET, GATE, CAT, UPSC, SSC, RRB, IBPS, SBI, state PSCs, police, teaching and armed forces. Each exam has its official pattern, a syllabus checklist, practice MCQs, timed mocks and a link to the conducting body's official site. English and Hindi.
+
+Not an official exam portal. Not affiliated with any exam body. Applications must be submitted on the official site of the conducting body.
+
+## Key pages
+- /explore: all exams, filter by category and career stage
+- /tests/[id]: pattern, syllabus, MCQ bank, mocks, jobs, alerts and apply link for one exam
+- /jobs: current recruitment notices with official links
+- /alerts: exam dates, admit cards and results
+- /faq: common questions
