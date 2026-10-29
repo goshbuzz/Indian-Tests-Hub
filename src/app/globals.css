@@ -39,3 +39,20 @@ html {
   .hero-rise > *,
   .hero-rise-side { animation: none; }
 }
+
+/* A saffron, white and green accent keeps the Indian-inspired palette visible
+   across both the main site and the standalone login and mock screens. */
+body::before,
+.tricolor-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, #ff9933 0 33.333%, #fff 33.333% 66.666%, #138808 66.666% 100%);
+}
+
+.tricolor-header::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

@@ -87,7 +87,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     return (
       <div dir="ltr" className="flex min-h-dvh justify-center bg-[#f7f4ea] text-stone-900">
         <div className="flex min-h-dvh w-full max-w-md flex-col">
-          <header className="sticky top-0 z-40 bg-gradient-to-br from-[#01411C] via-[#046a32] to-[#0a8f44] pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] text-white">
+          <header className="tricolor-header sticky top-0 z-40 bg-gradient-to-br from-[#01411C] via-[#046a32] to-[#0a8f44] pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] text-white">
             <div className="flex items-center justify-center gap-2 px-4">
               <Link href="/start" className="flex items-center gap-2">
                 <Logo size={36} />
@@ -98,7 +98,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               </Link>
               <div className="flex items-center gap-1 text-[11px]">
                 <span className="rounded-full bg-white/15 px-2 py-0.5">🔥 {streak}</span>
-                <span className="rounded-full bg-[#C5A44E] px-2 py-0.5 font-semibold text-[#01411C]">⭐ {points}</span>
+                <span className="rounded-full bg-[#FF9933] px-2 py-0.5 font-semibold text-[#01411C]">⭐ {points}</span>
               </div>
             </div>
             <div className="relative mx-4 mt-3">{search}</div>
@@ -139,7 +139,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   return (
     <div dir="ltr" className="min-h-screen bg-[#f4f1e8] text-stone-900">
-      <header className="sticky top-0 z-40 border-b border-emerald-900/10 bg-[#01411C] text-white">
+      <header className="tricolor-header sticky top-0 z-40 border-b border-emerald-900/10 bg-[#01411C] text-white">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
           <Link href="/start" className="flex items-center gap-2 font-semibold tracking-tight">
             <Logo size={32} />

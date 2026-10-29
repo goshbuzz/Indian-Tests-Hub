@@ -159,7 +159,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#f7f3e9] text-stone-900">
       <JsonLd data={homeLd} />
 
-      <header className="sticky top-0 z-50 border-b border-emerald-900/10 bg-white/90 backdrop-blur">
+      <header className="tricolor-header sticky top-0 z-50 border-b border-emerald-900/10 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <Link href="/" className="flex items-center gap-2.5" aria-label={`${SITE_NAME} home`}>
             <Logo size={38} />
@@ -209,7 +209,7 @@ export default function HomePage() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/start"
-                  className="group rounded-full bg-[#C5A44E] px-6 py-3 text-base font-bold text-[#01411C] shadow-lg shadow-black/20 transition hover:bg-[#d5b763]"
+                  className="group rounded-full bg-[#FF9933] px-6 py-3 text-base font-bold text-[#01411C] shadow-lg shadow-black/20 transition hover:bg-[#ffb866]"
                 >
                   Open the free test hub{" "}
                   <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5">
@@ -242,7 +242,7 @@ export default function HomePage() {
                   <p className="text-xs text-emerald-100">Mock in progress · SSC CGL Tier 1</p>
                   <p className="mt-1 text-2xl font-bold">Q 42 / 100</p>
                   <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/25">
-                    <div className="h-full w-[42%] rounded-full bg-[#C5A44E]" />
+                    <div className="h-full w-[42%] rounded-full bg-[#FF9933]" />
                   </div>
                   <p className="mt-2 text-[11px] text-emerald-50">⏱ 0:34:12 left · streak day 12 🔥</p>
                 </div>
@@ -403,7 +403,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/start"
-              className="mt-6 inline-block rounded-full bg-[#C5A44E] px-6 py-3 text-base font-bold text-[#01411C] shadow-lg transition hover:bg-[#d5b763]"
+              className="mt-6 inline-block rounded-full bg-[#FF9933] px-6 py-3 text-base font-bold text-[#01411C] shadow-lg transition hover:bg-[#ffb866]"
             >
               Open the hub →
             </Link>

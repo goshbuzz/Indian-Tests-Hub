@@ -58,7 +58,7 @@ function ExploreInner() {
       <div className="mt-2 flex flex-wrap justify-center gap-2">
         <button
           onClick={() => setStage("all")}
-          className={`rounded-full px-3 py-1.5 text-xs ${stage === "all" ? "bg-[#C5A44E] text-[#01411C]" : "border bg-white"}`}
+          className={`rounded-full px-3 py-1.5 text-xs ${stage === "all" ? "bg-[#FF9933] text-[#01411C]" : "border bg-white"}`}
         >
           All stages
         </button>
@@ -66,7 +66,7 @@ function ExploreInner() {
           <button
             key={s}
             onClick={() => setStage(s)}
-            className={`rounded-full px-3 py-1.5 text-xs ${stage === s ? "bg-[#C5A44E] text-[#01411C]" : "border bg-white"}`}
+            className={`rounded-full px-3 py-1.5 text-xs ${stage === s ? "bg-[#FF9933] text-[#01411C]" : "border bg-white"}`}
           >
             {s}
           </button>
