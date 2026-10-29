@@ -46,7 +46,7 @@ body::before,
 .tricolor-header::after {
   content: "";
   display: block;
-  height: 4px;
+  height: 6px;
   background: linear-gradient(to right, #ff9933 0 33.333%, #fff 33.333% 66.666%, #138808 66.666% 100%);
 }
 

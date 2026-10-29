@@ -2,6 +2,7 @@ import { TESTS } from "../src/data/tests.ts";
 import { mcqsFor, questionsForPaper, prepPackFor } from "../src/data/coverage.ts";
 import { bankSubjectFor } from "../src/data/mcqBank.ts";
 import { paperShape, slotCount } from "../src/data/mockShape.ts";
+import { FAMILIES } from "../src/data/families.ts";
 import { subjectsFor } from "../src/data/sections.ts";
 
 function matchesSubject(subject: string, allowed: string[]): boolean {
@@ -51,6 +52,16 @@ for (const t of TESTS) {
   }
   const paperLeak = paper.filter((m) => !matchesSubject(m.subject, allowed));
   if (paperLeak.length) add(`${t.id} PAPER_LEAK ${paperLeak[0].subject}`);
+
+  // A capped shape alone can conceal an incomplete official section. Report the
+  // shortfall against the family pattern as well, including missing pools.
+  const f = FAMILIES[t.family];
+  for (const [subject, requested] of f?.sections ?? []) {
+    if (requested <= 0) continue;
+    const allowedForSection = bankSubjectFor(subject);
+    const available = new Set(bank.filter((m) => matchesSubject(m.subject, allowedForSection)).map((m) => m.question_text)).size;
+    if (available < requested) add(`${t.id} SHORT_SECTION ${subject} ${available}/${requested}`);
+  }
 
   for (const sl of shape.slots) {
     if (sl.kind !== "mcq" || !sl.subject) continue;

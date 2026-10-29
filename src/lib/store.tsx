@@ -213,9 +213,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       },
       addAttempt: (a) => {
         setAttempts((x) => [a, ...x]);
-        setPoints((p) => p + Math.round((a.score / a.total) * 50) + 10);
+        // Exam marks can be negative; keep the activity reward non-negative.
+        const ratio = a.total > 0 ? Math.max(0, a.score) / a.total : 0;
+        setPoints((p) => p + Math.round(ratio * 50) + 10);
         bumpActivity(setStreak, setLastActive, setPoints, setBadges);
-        if (a.score / a.total >= 0.8) setBadges((b) => (b.includes("High Scorer") ? b : [...b, "High Scorer"]));
+        if (ratio >= 0.8) setBadges((b) => (b.includes("High Scorer") ? b : [...b, "High Scorer"]));
         if (notify.enabled && notify.mocks) {
           notifyLocal("Mock finished", `Score ${a.score}/${a.total}`, `/tests/${a.test_id}`);
         }

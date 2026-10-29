@@ -74,6 +74,8 @@ export type MCQ = {
   source: "official" | "ai_generated" | "aggregator";
   kind?: "mcq" | "short" | "long";
   model_answer?: string;
+  /** Index of the originating paper slot, for section-timed mocks. */
+  paper_section?: number;
 };
 
 export type MockConfig = {
