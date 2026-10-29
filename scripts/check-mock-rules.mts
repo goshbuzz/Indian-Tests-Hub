@@ -3,7 +3,7 @@ import { MCQ_BANK, bankSubjectFor } from "../src/data/mcqBank.ts";
 import { mcqsFor, paperShape, questionsForPaper } from "../src/data/coverage.ts";
 import { paperSections, scoreMock, timerPosition, verifiedMockRules } from "../src/data/mockRules.ts";
 
-for (const id of ["ssc-selection-matric", "ssc-selection-higher-secondary", "ssc-selection-graduate"]) {
+for (const id of ["ssc-selection-matric", "ssc-selection-higher-secondary", "ssc-selection-graduate", "cgl"]) {
   const questions = questionsForPaper(id, 2026, 1, "test");
   const sections = paperSections(questions);
   assert.equal(questions.length, 100, `${id} length`);
@@ -14,6 +14,21 @@ for (const id of ["ssc-selection-matric", "ssc-selection-higher-secondary", "ssc
   assert.deepEqual(scoreMock(questions, answers, 2, 0.5), { score: 1.5, total: 200, correctCount: 1, questionCount: 100 });
   assert.deepEqual(scoreMock(questions, { [questions[1].id]: answers[questions[1].id] }, 2, 0.5).score, -0.5);
 }
+
+const iat = questionsForPaper("iiser-iat", 2026, 1, "test");
+assert.equal(iat.length, 60);
+assert.deepEqual(paperSections(iat).map(({ start, end }) => end - start + 1), [15, 15, 15, 15]);
+assert.equal(new Set(iat.map((q) => q.question_text)).size, 60);
+assert.ok(iat.filter((q) => q.paper_section === 2).every((q) => q.subject === "Mathematics"));
+assert.deepEqual(scoreMock(iat, { [iat[0].id]: iat[0].correct_answer, [iat[1].id]: (iat[1].correct_answer + 1) % iat[1].options.length }, 4, 1), { score: 3, total: 240, correctCount: 1, questionCount: 60 });
+assert.deepEqual(verifiedMockRules("iiser-iat"), { correct: 4, wrong: 1, sectionSeconds: 0 });
+assert.deepEqual(verifiedMockRules("cgl"), { correct: 2, wrong: 0.5, sectionSeconds: 900 });
+assert.deepEqual(verifiedMockRules("ugc-net-p1"), { correct: 2, wrong: 0, sectionSeconds: 0 });
+assert.deepEqual(bankSubjectFor("Aptitude for Service Sector"), []);
+assert.deepEqual(bankSubjectFor("Innovation & Entrepreneurship"), []);
+assert.equal(paperShape("nchm").short, true);
+assert.equal(paperShape("cmat").short, true);
+assert.match(paperShape("ugc-net-p1").note, /both papers/);
 
 const jipmat = questionsForPaper("jipmat", 2026, 1, "test");
 assert.deepEqual(paperSections(jipmat).map(({ start, end }) => end - start + 1), [33, 33, 34]);

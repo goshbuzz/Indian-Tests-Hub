@@ -77,10 +77,11 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   ], "Class 12 passed or appearing; university and programme-specific requirements apply.",
   "See the NTA bulletin for category and subject-count fees", true, "2026: each selected subject is a separate 50-question paper lasting 60 minutes; +5 per correct answer and −1 per wrong answer. This practice paper covers the General Aptitude Test only, not language or domain papers. Check the latest bulletin for later cycles.",
   { title: "NTA CUET (UG) 2026 information bulletin, section 2.3", url: "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601031633478370.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
-  fam("cuet-pg", "CUET (PG) per subject", 90, N1, [
+  fam("cuet-pg", "CUET (PG) per paper", 90, N1, [
     ["Domain Subject", 75, 300],
-  ], "Bachelor's degree (or appearing) in the relevant subject as per university rules.",
-  "₹1,000–1,500 (approx.)", true, "CBT, 75 questions, 300 marks, 90 minutes, +4 / −1. Single domain-specific section."),
+  ], "Bachelor's degree or appearing; university and programme-specific criteria apply.",
+  "See the NTA bulletin for current fees", true, "2026: each selected paper has 75 MCQs in 90 minutes; +4 for correct and −1 for incorrect answers. Papers vary by subject; subject-specific practice is not yet available here.",
+  { title: "NTA CUET (PG) 2026 information bulletin, examination scheme", url: "https://cdnbbsr.s3waas.gov.in/s388a839f2f6f1427879fc33ee4acf4f66/uploads/2025/12/202512161583029269.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("eng-180", "State engineering CET (PCM, 180 Q)", 180, N0, [
     ["Physics", 60, 60], ["Chemistry", 60, 60], ["Mathematics", 60, 60],
   ], "Class 12 with PCM and the minimum aggregate notified by the state/university.",
@@ -121,10 +122,16 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
     ["Mathematics", 20, 80], ["Aptitude (Architecture)", 40, 120], ["Drawing", 2, 100],
   ], "Class 12 with 50% (or as notified) in PCM/appearing; age rules as per COA.",
   "₹2,000 (approx.)", false, "Drawing test plus MCQ paper; confirm counts on nata.in."),
-  fam("iiser-iat", "IISER Aptitude Test (IAT)", 180, N0, [
-    ["Physics", 20, 60], ["Chemistry", 20, 60], ["Mathematics", 20, 60], ["Biology", 20, 60], ["Aptitude", 20, 60],
-  ], "Class 12 with PCM/PCB as per the IISER admissions notice.",
-  "₹1,000–1,500 (approx.)", false, "Confirm section counts in the IISER notice."),
+  fam("iiser-iat", "IISER Aptitude Test (IAT)", 180, N1, [
+    ["Biology", 15, 60], ["Chemistry", 15, 60], ["Mathematics (IAT)", 15, 60], ["Physics", 15, 60],
+  ], "Class 12 or eligible diploma, subject to passing-year, subject and programme requirements in the IISER brochure.",
+  "See the IISER brochure for current category fees", true, "2026: 60 MCQs, 240 marks, 180 minutes; +4 for correct and −1 for incorrect answers. Shared practice questions are not official papers and may differ in difficulty.",
+  { title: "IISER IAT 2026 information brochure, section 19", url: "https://www.iiseradmission.in/assets/pdfs/IB_IAT_2026_ENG.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
+  fam("nchm-jee", "NCHM JEE", 120, N1, [
+    ["Numerical Ability and Analytical Aptitude", 15, 60], ["Reasoning and Logical Deduction", 15, 60], ["General Knowledge & Current Affairs", 15, 60], ["English Language", 45, 180], ["Aptitude for Service Sector", 30, 120],
+  ], "Class 12 or equivalent with English, or appearing, subject to the NTA bulletin.",
+  "See the NTA bulletin for current category fees", true, "2026: 120 MCQs in 120 minutes; +4 for correct and −1 for incorrect answers. Practice omits the service-sector section until suitable questions are available.",
+  { title: "NTA NCHM JEE 2026 information bulletin, section 4", url: "https://cdnbbsr.s3waas.gov.in/s388a839f2f6f1427879fc33ee4acf4f66/uploads/2025/12/20260102470139941.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("ipmat", "IPMAT (Integrated MBA)", 120, N025, [
     ["Quantitative Ability", 40, 40], ["Verbal Ability", 40, 40], ["Logical Reasoning", 40, 40],
   ], "Class 12 with the required percentage; IIM Indore/Rohtak notice applies.",
@@ -173,8 +180,9 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   { title: "AIMA: information for MAT December 2026", url: "https://www.aima.in/content/testing-and-assessment/mat/mat", cycle: "December 2026", checkedAt: "2026-10-30" }),
   fam("cmat", "CMAT (AICTE)", 180, N1, [
     ["Quantitative Techniques & Data Interpretation", 20, 80], ["Logical Reasoning", 20, 80], ["Language Comprehension", 20, 80], ["General Awareness", 20, 80], ["Innovation & Entrepreneurship", 20, 80],
-  ], "Bachelor's degree (50%) for management courses as per AICTE rules.",
-  "₹2,000 (approx.)", true, "100 MCQs, 400 marks, 180 minutes. Five sections of 20 questions each. +4 per correct, −1 per wrong."),
+  ], "Bachelor's degree or appearing, subject to NTA and admitting-institution requirements.",
+  "See the NTA bulletin for current category fees", true, "2026: 100 MCQs, 400 marks, 180 minutes. Five sections of 20 questions each; +4 per correct and −1 per wrong. Practice omits the Innovation & Entrepreneurship section until suitable questions are available.",
+  { title: "NTA CMAT 2026 information bulletin, section 1.4", url: "https://cdnbbsr.s3waas.gov.in/s3a381c2c35c9157f6b67fd07d5a200ae1/uploads/2025/10/202510171049586023.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
   fam("snap", "SNAP (Symbiosis)", 120, N025, [
     ["Quantitative & Data Interpretation", 30, 30], ["Verbal & Reading Comprehension", 30, 30], ["Logical Reasoning", 30, 30], ["General Awareness", 30, 30],
   ], "Bachelor's degree for Symbiosis PGDM admissions.",
@@ -183,14 +191,16 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
     ["Mathematics", 50, 200], ["Aptitude & Reasoning", 50, 200], ["Computer Knowledge", 30, 100],
   ], "BCA/BSc with mathematics as per NIT notice.",
   "₹1,000–2,000 (approx.)", false, "Confirm section counts in the NIMCET notice."),
-  fam("ugc-net-p1", "UGC NET (Paper I)", 60, N0, [
-    ["General Aptitude", 50, 100],
-  ], "Master's degree (or appearing) as per UGC notice; age rules for JRF.",
-  "₹1,150 general (approx.)", true, "Paper I: 50 questions, 100 marks, 1 hour. Teaching & research aptitude, comprehension, reasoning, data."),
-  fam("ugc-net-p2", "UGC NET (Paper II subject)", 120, N0, [
+  fam("ugc-net-p1", "UGC NET (Paper I)", 180, N0, [
+    ["Teaching & Research Aptitude", 50, 100],
+  ], "Qualification and JRF age rules vary by eligibility category; see the current NTA bulletin.",
+  "See the NTA bulletin for current category fees", true, "December 2026: Paper I has 50 MCQs (100 marks); Papers I and II share one 180-minute session with no break. This is Paper I practice only, not a complete 180-minute exam. +2 correct; no negative marking.",
+  { title: "NTA UGC-NET December 2026 FAQ, questions 29–31", url: "https://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/20261019257579260.pdf", cycle: "December 2026", checkedAt: "2026-10-30" }),
+  fam("ugc-net-p2", "UGC NET (Paper II subject)", 180, N0, [
     ["Subject Paper", 100, 200],
-  ], "Master's degree in the relevant subject (or appearing).",
-  "₹1,150 general (approx.)", true, "Paper II: 100 questions, 200 marks, 2 hours. Subject-specific."),
+  ], "Qualification and subject-specific eligibility depend on the current NTA bulletin.",
+  "See the NTA bulletin for current category fees", true, "December 2026: Paper II has 100 MCQs (200 marks); Papers I and II share one 180-minute session with no break. Subject-specific Paper II practice is not yet available. +2 correct; no negative marking.",
+  { title: "NTA UGC-NET December 2026 FAQ, questions 29–31", url: "https://cdnbbsr.s3waas.gov.in/s301eee509ee2f68dc6014898c309e86bf/uploads/2026/10/20261019257579260.pdf", cycle: "December 2026", checkedAt: "2026-10-30" }),
   fam("csir-net", "CSIR UGC NET (Life/Physical/Maths sciences)", 180, N025, [
     ["Part A (General)", 20, 40], ["Part B & C (Subject)", 75, 150],
   ], "Master's degree (or appearing) with the aggregate notified by CSIR/NTA.",
@@ -236,10 +246,15 @@ export const FAMILIES: Record<string, Family> = Object.fromEntries([
   ], "Eligibility varies by post and examination level; check the current SSC notice.",
   "See the current SSC notice", true, "2026 notice: four 15-minute sections; separate CBE levels for matriculation, higher secondary and graduation posts.",
   { title: "SSC Phase-XIV/2026 Selection Posts notice, sections 15.1–15.2", url: "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_RHQ_2026_phase_xiv.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
-  fam("cgl", "SSC CGL Tier 1", 60, N050, [
+  fam("cgl", "SSC CGL Tier I", 60, N050, [
     ["General Intelligence & Reasoning", 25, 50], ["General Awareness", 25, 50], ["Quantitative Aptitude", 25, 50], ["English Comprehension", 25, 50],
-  ], "Bachelor's degree from a recognised university; age and nationality rules per SSC notice.",
-  "₹100 (SC/ST/PwD/women exempt)", true, "Tier 1 is qualifying (100 Q, 200 M, 60 min). Tier 2 is merit-deciding; section-wise time applies."),
+  ], "Qualifications, age limits and other rules vary by post; see the SSC notice.",
+  "See the SSC notice for current fees and exemptions", true, "2026 Tier I: 100 MCQs, 200 marks; +2 per correct and −0.50 per wrong. Four 15-minute sections for standard timing; eligible candidates using a scribe have separate provisions. Tier II is not represented by this mock.",
+  { title: "SSC Combined Graduate Level Examination 2026 notice, section 13.8", url: "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2025.pdf", cycle: "2026", checkedAt: "2026-10-30" }),
+  fam("recruitment-generic", "General recruitment practice", 60, N050, [
+    ["General Intelligence & Reasoning", 25, 50], ["General Awareness", 25, 50], ["Quantitative Aptitude", 25, 50], ["English Comprehension", 25, 50],
+  ], "See the relevant conducting body's current notice for eligibility.",
+  "See the conducting body's current notice", false, "Generic practice only; this is not a verified pattern for this recruitment. Check the applicable official notice."),
   fam("chsl", "SSC CHSL Tier 1", 60, N050, [
     ["English Language", 25, 50], ["General Intelligence & Reasoning", 25, 50], ["Quantitative Aptitude", 25, 50], ["General Awareness", 25, 50],
   ], "Class 12 pass (or appearing) as per post notice.",
@@ -536,6 +551,11 @@ export const SUBJECT_HI: Record<string, string> = {
   "General Ability Test": "सामान्य योग्यता परीक्षा",
   "General Aptitude": "सामान्य अभियोग्यता",
   "General Aptitude Test": "सामान्य अभियोग्यता परीक्षा",
+  "Teaching & Research Aptitude": "शिक्षण एवं अनुसंधान अभिरुचि",
+  "Mathematics (IAT)": "गणित (आईएटी)",
+  "Numerical Ability and Analytical Aptitude": "संख्यात्मक क्षमता एवं विश्लेषणात्मक अभिरुचि",
+  "Reasoning and Logical Deduction": "तर्क और तार्किक निष्कर्ष",
+  "Aptitude for Service Sector": "सेवा क्षेत्र के लिए अभिरुचि",
   "Aptitude & Mental Ability": "अभियोग्यता व मानसिक योग्यता",
   "Mental Ability": "मानसिक योग्यता",
   "Aptitude (Architecture)": "वास्तु अभिरुचि",
@@ -673,6 +693,7 @@ export const SYLLABUS: Record<string, string> = {
   "Numerical Aptitude": "Simplification:सरलीकरण;Percentage:प्रतिशत;Ratio & proportion:अनुपात व समानुपात;Mensuration:क्षेत्रमिति;Data interpretation:डेटा विश्लेषण",
   "Numerical Ability (Numerical)": "Simplification:सरलीकरण;Percentage:प्रतिशत;Data interpretation:डेटा विश्लेषण",
   "Mathematics": "Algebra:बीजगणित;Trigonometry:त्रिकोणमिति;Calculus:कैलकुलस;Coordinate geometry:निर्देशांक ज्यामिति;Probability:प्रायिकता;Vectors:सदिश;Matrices:आव्यूह",
+  "Mathematics (IAT)": "Algebra:बीजगणित;Trigonometry:त्रिकोणमिति;Calculus:कैलकुलस;Coordinate geometry:निर्देशांक ज्यामिति;Probability:प्रायिकता;Vectors:सदिश;Matrices:आव्यूह",
   "Elementary Mathematics": "Number system:संख्या पद्धति;Arithmetic:अंकगणित;Geometry:ज्यामिति;Mensuration:क्षेत्रमिति;Algebra:बीजगणित",
   "Mathematics (MCQ)": "Algebra:बीजगणित;Trigonometry:त्रिकोणमिति;Calculus:कैलकुलस;Geometry:ज्यामिति",
   "Mathematics & Logic": "Algebra:बीजगणित;Logic:तर्क;Sets & functions:समुच्चय व फलन",

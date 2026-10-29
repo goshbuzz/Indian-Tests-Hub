@@ -29,7 +29,7 @@ Each test's pattern, mock shape and default eligibility come from its family. Sy
 
 ### Honest coverage
 
-- The catalogue lists **230 exam entries** (see `src/data/catalog.ts`). **8 entries** have patterns marked verified with a linked official notice; the remaining 222 are labelled approximate or have no representative exam pattern. Unsourced older verified flags are treated as unverified until checked. Verification is cycle-specific, not a guarantee about future exams.
+- The catalogue lists **230 exam entries** (see `src/data/catalog.ts`). **15 entries** have patterns marked verified with a linked official notice; the remaining 215 are labelled approximate or have no representative exam pattern. Unsourced older verified flags are treated as unverified until checked. Verification is cycle-specific, not a guarantee about future exams.
 - **Verified** patterns require both a verified family flag and a linked official source. Approximate patterns should be checked against the current official notice. New entries may be included with an approximate label while their patterns await verification.
 - Practice coverage varies by exam and section. Some subject-specific banks are small or unavailable; mock papers can be shorter than the listed pattern, and unavailable sections are not filled with unrelated general-awareness questions.
 - Practice MCQs do not reproduce written, speaking, listening or other non-MCQ tasks. Check `npx tsx scripts/verify-banks.mts` for current section shortfalls; the script exits nonzero while issues remain.

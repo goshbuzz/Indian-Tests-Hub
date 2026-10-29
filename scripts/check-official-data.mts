@@ -9,7 +9,22 @@ import { verifiedMockRules } from "../src/data/mockRules.ts";
 import { GET } from "../src/app/api/tests/[id]/route.ts";
 
 assert.equal(TESTS.length, 230);
-assert.equal(TESTS.filter((test) => test.verified).length, 8);
+assert.equal(TESTS.filter((test) => test.verified).length, 15);
+for (const id of ["iiser-iat", "nchm", "cmat", "cuet-pg", "ugc-net-p1", "ugc-net-p2", "cgl"]) {
+  assert.equal(TEST_BY_ID[id].verified, true, `${id} is source-backed`);
+  assert.ok(FAMILIES[TEST_BY_ID[id].family].source?.url.startsWith("https://"));
+}
+for (const id of ["epfo-ssa", "esic", "nielit", "upsc-epfo"]) {
+  assert.equal(TEST_BY_ID[id].verified, false, `${id} must not inherit SSC CGL verification`);
+  assert.equal(FAMILIES[TEST_BY_ID[id].family].source, undefined);
+}
+assert.deepEqual(FAMILIES["iiser-iat"].sections, [["Biology", 15, 60], ["Chemistry", 15, 60], ["Mathematics (IAT)", 15, 60], ["Physics", 15, 60]]);
+assert.deepEqual(FAMILIES["nchm-jee"].sections.map((s) => s[1]), [15, 15, 15, 45, 30]);
+assert.equal(FAMILIES["nchm-jee"].minutes, 120);
+assert.equal(FAMILIES["ugc-net-p1"].minutes, 180);
+assert.match(TEST_BY_ID["ugc-net-p1"].format_description, /share one 180-minute session/);
+assert.equal(mcqsFor("ugc-net-p2").length, 0);
+assert.equal(mcqsFor("cuet-pg").length, 0);
 assert.ok(TESTS.filter((test) => test.verified).every((test) => FAMILIES[test.family].source));
 assert.equal(TEST_BY_ID.rpmt.verified, false);
 assert.equal(mcqsFor("rpmt").length, 0);
@@ -40,6 +55,21 @@ assert.ok(matAlert && !matAlert.published_at);
 assert.equal(alertDateLabel(matAlert), "Checked 2026-10-30");
 assert.equal(alertDateLabel(alertsFor("jee-main")[0]), "Published 2026-10-24");
 assert.equal(new Set(MCQ_BANK.map((q) => q.question_text.trim().toLowerCase())).size, MCQ_BANK.length);
+const expectedIatAnswers: [string, string][] = [
+  ["roots of x² − 5x + 6", "2 and 3"],
+  ["derivative of sin x", "cos x"],
+  ["indefinite integral of 1", "x + C"],
+  ["determinant of the 2 by 2", "−2"],
+  ["dot product of (1, 2)", "11"],
+  ["Two fair coins are tossed independently", "1/4"],
+  ["slope of the line y = 2x + 1", "2"],
+  ["limit of sin x / x", "1"],
+];
+for (const [text, answer] of expectedIatAnswers) {
+  const q = MCQ_BANK.find((item) => item.subject === "Mathematics" && item.question_text.includes(text));
+  assert.ok(q, `Missing IAT maths question: ${text}`);
+  assert.equal(q.options[q.correct_answer], answer);
+}
 for (const q of MCQ_BANK) {
   assert.ok(q.options.every((option) => option.trim()));
   assert.equal(new Set(q.options.map((option) => option.trim().toLowerCase())).size, q.options.length);
